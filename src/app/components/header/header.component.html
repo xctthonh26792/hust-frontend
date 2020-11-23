@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 offset-1">
+        <a routerLink="/" class="custom-logo-link" rel="home"><img src="assets/images/logo.png" class="logo"
+            alt="Vien khoa hoc cong nghe Viet Nam"></a>
+      </div>
+      <div class="col-md-5 clearfix">
+        <form class="search-form float-right">
+          <input class="search-input" type="text" name="" [placeholder]="'text-search' | loc">
+          <button class="search-button" type="button" (click)="search()"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>

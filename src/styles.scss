@@ -1,0 +1,583 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+  background-color: #fff;
+}
+
+body {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  color: #1b1c1d;
+  font-size: 14px;
+}
+
+a {
+  color: #1F2123;
+  text-decoration: none;
+  line-height: 20px;
+}
+
+a:hover,
+a:active {
+  color: #006f38;
+  text-decoration: none;
+}
+
+b {
+  color: #333;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+hr {
+  border: 1px solid #ececec;
+  border-width: 0.5px;
+  margin: 24px 0;
+}
+
+p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  color: #1b1c1d;
+  margin-bottom: 16px;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+
+/* 0. Fix START */
+
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.relative {
+  position: relative;
+}
+
+.border {
+  border: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.red {
+  color: #ff766f;
+}
+
+.white {
+  color: #fff;
+}
+
+.green {
+  color: #006f38;
+}
+
+
+/* 1. Fix END */
+
+
+/* Boostrap START */
+
+
+/* Boostrap END */
+
+
+/* 2. BASE START */
+
+.button {
+  display: block;
+  height: 48px;
+  width: 300px;
+  border-radius: 8px;
+  line-height: 48px;
+  text-align: center;
+  text-decoration: none !important;
+  background-color: #006f38;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button.button-outline {
+  background: #fff;
+  border: 2px solid #006f38;
+  color: #006f38;
+  line-height: 42px;
+}
+
+.button.button-small {
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+}
+
+.button.button-long {
+  width: 520px;
+}
+
+.button.button-red {
+  background-color: #ff766f;
+}
+
+.button.button-primary {
+  background-color: #006f38;
+}
+
+.button:hover,
+.button:active {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.button.button-outline:hover {
+  background: #006f38;
+  color: #fff;
+}
+
+.button-more {
+  margin: 0 auto;
+  width: 240px;
+  margin-bottom: 100px;
+}
+
+.button i {
+  margin-right: 8px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+/* INPUT */
+
+.input {
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  outline: none;
+  border: 1px solid #f1f1f1;
+  width: 100%;
+}
+
+
+/* 2. BASE END */
+
+
+
+
+
+
+
+
+
+
+
+
+/* 3. CUSTOM START */
+
+#backTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 32px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #ff766f;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+
+
+/* Nav START */
+
+
+/* Nav END */
+
+
+/* Banner */
+
+.banner {
+  width: 100%;
+}
+
+.list-banner {
+  margin: 0;
+  padding: 0;
+}
+
+.list-banner li {
+  display: inline-block;
+  margin: 0px;
+  width: 33%;
+}
+
+
+
+/* BreadCrumb END */
+
+
+/* Box Item START */
+
+.page-title {
+  border-bottom: 1px solid #f1f1f1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 32px;
+}
+
+.box-item {
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+
+*>.box-item:last-child {
+  border-bottom: 0;
+}
+
+.box-item:last-child {
+  margin-bottom: 0;
+}
+
+.current-project-list .box-item {
+  border-bottom: none;
+  margin-bottom: 16px;
+}
+
+.box-item-actions {
+  margin: 16px 0;
+}
+
+.box-subscribe {
+  border: 1px solid #f1f1f1;
+  padding: 32px 16px;
+  border-radius: 8px;
+}
+
+.box-subscribe .button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.box-subscribe.box-item h3 {
+  /* border-bottom: 1px solid #f1f1f1; */
+  margin-bottom: 16px;
+}
+
+.box-item h5 {
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #006f38;
+}
+
+.item-author {
+  margin-right: 32px;
+  font-weight: 600;
+}
+
+.item-author img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.box-other-tile {
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 8px;
+  font-weight: 700;
+  color: #006f38;
+  font-size: 18px;
+  line-height: 24px;
+  display: block;
+  width: 100%;
+}
+
+.item-project-view .box-item-actions {
+  margin: 32px 0;
+}
+
+
+/* List */
+
+.list-people-row {}
+
+.people-image {
+  display: block;
+  width: 100%;
+  /* border-radius: 4px; */
+  overflow: hidden;
+}
+
+.people-name {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.other-list li {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.other-list li a {
+  display: block;
+  width: 100%;
+}
+
+.other-list li a.time {
+  color: #a6a6a6;
+}
+
+.other-list li a.time:hover {
+  color: #009785;
+}
+
+.other-list li a.other-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.item-public-tile {
+  display: block;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.item-project {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.current-link a,
+.event-link a {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.current-link a i,
+.event-link a i {
+  margin-right: 4px;
+  width: 20px;
+  text-align: center;
+  opacity: 0.4;
+}
+
+
+/* .item-project .project-category {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.item-project .project-category .project-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+} */
+
+.item-project .project-category img {
+  max-height: 300px;
+}
+
+
+/* Box Item END */
+
+
+/* LIST ITEM */
+
+.section-title {
+  padding: 8px 0;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 16px;
+}
+
+.section-title h4 {
+  margin: 0;
+  font-weight: 700;
+  color: #1b1c1d;
+  letter-spacing: 0.2;
+}
+
+.section-title .title-more {
+  float: right;
+  color: #F97E78;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.item-list {
+  padding-left: 0;
+}
+
+.item-list .item {
+  overflow: hidden;
+  margin-bottom: 32px;
+  /* border-radius: 4px; */
+}
+
+
+/* .item-thumbnail {
+  padding-right: 8px;
+}
+
+.item-info {
+  padding-left: 8px;
+} */
+
+.item:hover a {
+  color: #009785;
+  cursor: pointer;
+}
+
+.item-thumbnail img {
+  max-height: auto;
+  width: 100%;
+}
+
+.item-title {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.item-title a {
+  font-weight: 600;
+  font-size: 18px;
+  color: #1F2123;
+}
+
+.item-time {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.item-description {
+  height: 60px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.item-category {
+  position: relative;
+}
+
+.category-title {
+  display: block;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  position: absolute;
+  padding-left: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.item-category:hover .category-title {
+  background-color: #006f38;
+  color: #fff;
+}
+
+
+/* END */
+
+
+/* 4. RESPONSIVE */
