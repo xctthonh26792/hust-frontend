@@ -1,0 +1,10 @@
+<ng-container remove-dom>
+  <ul class="menu nav-submenu" *ngIf="models">
+    <li class="nav-item nav-subitem " *ngFor="let model of models">
+      <a [routerLink]="[path, model.url]">{{ model.name }}
+        <i class="fa fa-caret-down" aria-hidden="true" *ngIf="model.childrens"></i>
+      </a>
+      <nav-menu [models]="model.childrens" [path]="path" *ngIf="model.childrens"></nav-menu>
+    </li>
+  </ul>
+</ng-container>

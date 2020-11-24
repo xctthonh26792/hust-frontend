@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  app_name: 'Viện khoa học & Công nghệ môi trường'
+  api_url: 'http://localhost:24567'
 };
 
 /*
