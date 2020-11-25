@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SeoService } from 'src/services';
+
+import _ from 'lodash';
+import { environment } from '@env'
+import { Utils } from '../../utils'
+
 
 @Component({
   selector: 'app-post',
@@ -7,7 +13,21 @@ import { SeoService } from 'src/services';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-  constructor(seo: SeoService) {
+  constructor(seo: SeoService, route: ActivatedRoute) {
     seo.set('Chi tiết bài viết')
+    this.post = _.get(route.snapshot.data, 'post');
+    console.log(this)
+  }
+
+  post: any
+
+  download() {
+    let url = _.get(this.post, 'url')
+    const link = `${environment.api_url}/${url}`
+    console.log('download from', link)
+  }
+
+  seo(title: string, code: string) {
+    return `${Utils.toSeo(title)}-${code}`
   }
 }

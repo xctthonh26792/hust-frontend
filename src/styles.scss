@@ -720,3 +720,18 @@ ul li {
     opacity: 1;
   }
 }
+
+.sp-group {
+  span {
+    &::after {
+      content: ',';
+      margin-right: 8px;
+    }
+    &:last-child {
+      &::after {
+        content: '';
+        margin-right: none;
+      }
+    }
+  }
+}

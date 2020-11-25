@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import {
   HomeComponent,
   EventsComponent,
@@ -14,7 +15,9 @@ import {
   ContactComponent,
   ContainerComponent,
 } from './pages';
-import { MenuResolve } from './resolvers';
+import { MenuResolve, PublicationPostResolve } from './resolvers';
+import { EventPostResolve } from './resolvers/event.resolver';
+import { NewsPostResolve } from './resolvers/news.resolver';
 
 const routes: Routes = [
   {
@@ -34,7 +37,14 @@ const routes: Routes = [
       },
       {
         path: 'su-kien/:code',
-        component: EventComponent
+        component: EventsComponent
+      },
+      {
+        path: 'su-kien/bai-viet/:code',
+        component: EventComponent,
+        resolve: {
+          post: EventPostResolve
+        }
       },
       {
         path: 'xuat-ban',
@@ -42,7 +52,14 @@ const routes: Routes = [
       },
       {
         path: 'xuat-ban/:code',
-        component: PublicationComponent
+        component: PublicationsComponent
+      },
+      {
+        path: 'xuat-ban/bai-viet/:code',
+        component: PublicationComponent,
+        resolve: {
+          post: PublicationPostResolve
+        }
       },
       {
         path: 'du-an',
@@ -50,6 +67,10 @@ const routes: Routes = [
       },
       {
         path: 'du-an/:code',
+        component: ProjectsComponent
+      },
+      {
+        path: 'du-an/bai-viet/:code',
         component: ProjectComponent
       },
       {
@@ -62,7 +83,14 @@ const routes: Routes = [
       },
       {
         path: 'tin-tuc/:code',
-        component: PostComponent
+        component: PostsComponent
+      },
+      {
+        path: 'tin-tuc/bai-viet/:code',
+        component: PostComponent,
+        resolve: {
+          post: NewsPostResolve
+        }
       },
       {
         path: 'lien-he',

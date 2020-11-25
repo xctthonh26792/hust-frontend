@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { ServicesModule } from '../services'
@@ -24,6 +25,7 @@ import { RESOLVERS } from './resolvers';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     ServicesModule.forRoot(),
     HttpClientModule
