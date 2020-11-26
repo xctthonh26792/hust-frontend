@@ -15,6 +15,22 @@ import { DIRECTIVES } from './directives'
 import { APIS } from './apis'
 import { RESOLVERS } from './resolvers';
 
+import {
+  SwiperModule, SwiperConfigInterface,
+  SWIPER_CONFIG
+} from 'ngx-swiper-wrapper';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  observer: true,
+  direction: 'horizontal',
+  threshold: 50,
+  spaceBetween: 0,
+  slidesPerView: 1,
+  centeredSlides: false,
+  autoplay: true
+
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +40,17 @@ import { RESOLVERS } from './resolvers';
     ...DIRECTIVES
   ],
   imports: [
+    SwiperModule,
     BrowserModule,
     CommonModule,
     AppRoutingModule,
     ServicesModule.forRoot(),
     HttpClientModule
   ],
-  providers: [...APIS, ...RESOLVERS],
+  providers: [...APIS, ...RESOLVERS, {
+    provide: SWIPER_CONFIG,
+    useValue: DEFAULT_SWIPER_CONFIG
+  }],
   bootstrap: [AppComponent],
   schemas: [
     NO_ERRORS_SCHEMA

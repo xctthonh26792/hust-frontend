@@ -2,9 +2,25 @@
   <ul class="menu nav-submenu" *ngIf="models">
     <li class="nav-item nav-subitem " *ngFor="let model of models">
       <a [routerLink]="[path, model.url]">{{ model.name }}
-        <i class="fa fa-caret-down" aria-hidden="true" *ngIf="model.childrens"></i>
+        <!-- <i class="fa fa-caret-right" aria-hidden="true"></i> -->
+        <i class="fa fa-caret-right" aria-hidden="true" *ngIf="model.childrens"></i>
       </a>
       <nav-menu [models]="model.childrens" [path]="path" *ngIf="model.childrens"></nav-menu>
+      <!-- <ul class="nav-sub2menu">
+        <li class="nav-sub2item">
+          <a href="#">Sub2</a>
+        </li>
+        <li class="nav-sub2item">
+          <a href="#">Sub2</a>
+        </li>
+        <li class="nav-sub2item">
+          <a href="#">Sub2</a>
+        </li>
+        <li class="nav-sub2item">
+          <a href="#">Sub2</a>
+        </li>
+
+      </ul> -->
     </li>
   </ul>
 </ng-container>

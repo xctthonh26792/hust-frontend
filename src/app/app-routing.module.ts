@@ -15,7 +15,7 @@ import {
   ContactComponent,
   ContainerComponent,
 } from './pages';
-import { MenuResolve, PublicationPostResolve } from './resolvers';
+import { MenuResolve, PublicationPostResolve, BannerResolve } from './resolvers';
 import { EventPostResolve } from './resolvers/event.resolver';
 import { NewsPostResolve } from './resolvers/news.resolver';
 
@@ -24,7 +24,8 @@ const routes: Routes = [
     path: '',
     component: ContainerComponent,
     resolve: {
-      menu: MenuResolve
+      menu: MenuResolve,
+      data: BannerResolve
     },
     children: [
       {

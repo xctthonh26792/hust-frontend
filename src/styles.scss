@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 400;
   margin: 0;
   color: #1b1c1d;
@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: #1F2123;
+  color: #1f2123;
   text-decoration: none;
   line-height: 20px;
 }
@@ -101,7 +101,6 @@ ul li {
   outline: none;
 }
 
-
 /* 0. Fix START */
 
 .clearfix {
@@ -138,15 +137,11 @@ ul li {
   color: #006f38;
 }
 
-
 /* 1. Fix END */
-
 
 /* Boostrap START */
 
-
 /* Boostrap END */
-
 
 /* 2. BASE START */
 
@@ -227,19 +222,7 @@ ul li {
   width: 100%;
 }
 
-
 /* 2. BASE END */
-
-
-
-
-
-
-
-
-
-
-
 
 /* 3. CUSTOM START */
 
@@ -259,13 +242,9 @@ ul li {
   border-radius: 4px;
 }
 
-
-
 /* Nav START */
 
-
 /* Nav END */
-
 
 /* Banner */
 
@@ -283,11 +262,25 @@ ul li {
   margin: 0px;
   width: 33%;
 }
-
-
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff !important;
+  opacity: 0.4;
+  &:after {
+  }
+}
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    background-color: #fff;
+    opacity: 0.4;
+    border: none;
+    &.swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+}
 
 /* BreadCrumb END */
-
 
 /* Box Item START */
 
@@ -304,7 +297,7 @@ ul li {
   margin-bottom: 32px;
 }
 
-*>.box-item:last-child {
+* > .box-item:last-child {
   border-bottom: 0;
 }
 
@@ -371,10 +364,10 @@ ul li {
   margin: 32px 0;
 }
 
-
 /* List */
 
-.list-people-row {}
+.list-people-row {
+}
 
 .people-image {
   display: block;
@@ -442,7 +435,6 @@ ul li {
   opacity: 0.4;
 }
 
-
 /* .item-project .project-category {
   position: relative;
   display: block;
@@ -466,9 +458,7 @@ ul li {
   max-height: 300px;
 }
 
-
 /* Box Item END */
-
 
 /* LIST ITEM */
 
@@ -487,7 +477,7 @@ ul li {
 
 .section-title .title-more {
   float: right;
-  color: #F97E78;
+  color: #f97e78;
   font-size: 16px;
   font-weight: 400;
   text-decoration: none;
@@ -504,7 +494,6 @@ ul li {
   margin-bottom: 32px;
   /* border-radius: 4px; */
 }
-
 
 /* .item-thumbnail {
   padding-right: 8px;
@@ -532,7 +521,7 @@ ul li {
 .item-title a {
   font-weight: 600;
   font-size: 18px;
-  color: #1F2123;
+  color: #1f2123;
 }
 
 .item-time {
@@ -576,16 +565,9 @@ ul li {
   color: #fff;
 }
 
-
 /* END */
 
-
 /* 4. RESPONSIVE */
-
-
-
-
-
 
 .section.nav {
   margin-bottom: 0;
@@ -666,13 +648,13 @@ ul li {
   border-bottom-right-radius: 8px;
   -webkit-animation: fadeIn 0.3s;
   animation: fadeIn 0.3s;
-  overflow: hidden;
   z-index: 9;
   .nav-subitem {
     width: 100%;
     line-height: 40px;
     height: 40px;
     display: block;
+    position: relative;
     a {
       font-weight: 400;
       display: block;
@@ -680,11 +662,61 @@ ul li {
       width: 100%;
       overflow: hidden;
       color: #1f2123;
+      i {
+        font-size: 16px;
+        color: #ddd;
+        margin-left: 4px;
+      }
+    }
+    .nav-sub2menu {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      top: 0px;
+      left: 339px;
+      box-sizing: border-box;
+      min-width: 340px;
+      background-color: #fff;
+      border: 1px solid #d1d1d1;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      -webkit-animation: fadeIn 0.3s;
+      animation: fadeIn 0.3s;
+      z-index: 10;
     }
     &:hover {
       background-color: #f1f1f1;
       a {
         color: #1f2123;
+      }
+      .nav-sub2menu {
+        display: block;
+        opacity: 1;
+      }
+    }
+    &:last-child {
+      &:hover {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+    .nav-sub2item {
+      line-height: 48px;
+      height: 48px;
+      padding: 0 16px;
+      position: relative;
+      &:hover {
+        background-color: #f1f1f1;
+
+        a {
+          color: #1f2123;
+        }
+      }
+      &:last-child {
+        &:hover {
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
       }
     }
   }
@@ -724,12 +756,12 @@ ul li {
 .sp-group {
   span {
     &::after {
-      content: ',';
+      content: ",";
       margin-right: 8px;
     }
     &:last-child {
       &::after {
-        content: '';
+        content: "";
         margin-right: none;
       }
     }
