@@ -15,9 +15,9 @@ import {
   ContactComponent,
   ContainerComponent,
 } from './pages';
-import { MenuResolve, PublicationPostResolve, BannerResolve } from './resolvers';
+import { MenuResolve, PublicationPostResolve, BannerResolve, EventPostsResolve, PublicationPostsResolve, ProjectPostsResolve, ProjectPostResolve } from './resolvers';
 import { EventPostResolve, EventHomeDataResolve } from './resolvers/event.resolver';
-import { NewsPostResolve } from './resolvers/news.resolver';
+import { NewsPostResolve, NewsPostsResolve } from './resolvers/news.resolver';
 
 const routes: Routes = [
   {
@@ -26,7 +26,7 @@ const routes: Routes = [
     resolve: {
       menu: MenuResolve,
       data: BannerResolve,
-      events: EventHomeDataResolve
+      events: EventHomeDataResolve,
     },
     children: [
       {
@@ -35,11 +35,17 @@ const routes: Routes = [
       },
       {
         path: 'su-kien',
-        component: EventsComponent
+        component: EventsComponent,
+        resolve: {
+          posts: EventPostsResolve
+        }
       },
       {
         path: 'su-kien/:code',
-        component: EventsComponent
+        component: EventsComponent,
+        resolve: {
+          posts: EventPostsResolve
+        }
       },
       {
         path: 'su-kien/bai-viet/:code',
@@ -50,11 +56,17 @@ const routes: Routes = [
       },
       {
         path: 'xuat-ban',
-        component: PublicationsComponent
+        component: PublicationsComponent,
+        resolve: {
+          posts: PublicationPostsResolve
+        }
       },
       {
         path: 'xuat-ban/:code',
-        component: PublicationsComponent
+        component: PublicationsComponent,
+        resolve: {
+          posts: PublicationPostsResolve
+        }
       },
       {
         path: 'xuat-ban/bai-viet/:code',
@@ -65,15 +77,24 @@ const routes: Routes = [
       },
       {
         path: 'du-an',
-        component: ProjectsComponent
+        component: ProjectsComponent,
+        resolve: {
+          posts: ProjectPostsResolve
+        }
       },
       {
         path: 'du-an/:code',
-        component: ProjectsComponent
+        component: ProjectsComponent,
+        resolve: {
+          posts: ProjectPostsResolve
+        }
       },
       {
         path: 'du-an/bai-viet/:code',
-        component: ProjectComponent
+        component: ProjectComponent,
+        resolve: {
+          post: ProjectPostResolve
+        }
       },
       {
         path: 'current-projects',
@@ -81,11 +102,17 @@ const routes: Routes = [
       },
       {
         path: 'tin-tuc',
-        component: PostsComponent
+        component: PostsComponent,
+        resolve: {
+          posts: NewsPostsResolve
+        }
       },
       {
         path: 'tin-tuc/:code',
-        component: PostsComponent
+        component: PostsComponent,
+        resolve: {
+          posts: NewsPostsResolve
+        }
       },
       {
         path: 'tin-tuc/bai-viet/:code',

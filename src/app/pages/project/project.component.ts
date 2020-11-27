@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SeoService } from 'src/services';
 
 @Component({
@@ -7,7 +8,8 @@ import { SeoService } from 'src/services';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent {
-  constructor(seo: SeoService) {
+  constructor(seo: SeoService, private route: ActivatedRoute) {
     seo.set('Thông tin dự án')
+    console.log(this)
   }
 }

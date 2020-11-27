@@ -5,6 +5,16 @@ export class HttpWrapper {
   constructor(public http: HttpClient, public baseURL: string) {
   }
 
+  fetch(page: number, quantity: number, query: string = '') {
+    const url = this.baseURL + `/fetch/${page}/${quantity}/${query}`;
+    return this.http.get(url).toPromise();
+  }
+
+  fetchByType(type: string, page: number, quantity: number, query: string = '') {
+    const url = this.baseURL + `/fetch/${type}/${page}/${quantity}/${query}`;
+    return this.http.get(url).toPromise();
+  }
+
   get(href: string = '', params: any = {}) {
     return this.http.get(this.baseURL + `/${href}`, {
       params: params

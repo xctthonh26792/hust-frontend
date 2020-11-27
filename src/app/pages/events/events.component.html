@@ -2,91 +2,19 @@
   <h1 class="page-title">All Events</h1>
   <div class="row">
     <div class="col-md-9 side-left">
-      <div class="box-item">
+      <div class="box-item" *ngFor="let post of posts">
         <div class="events row">
           <div class="col-md-4">
             <img src="assets/images/event1.jpg">
           </div>
           <div class="col-md-8">
-            <a href="#" class="box-other-tile">What next for Women’s Enterprise Policy? </a>
+            <a [routerLink]="['/su-kien/bai-viet', seo(post.title, post.def_code)]" class="box-other-tile">{{ post.title }}</a>
             <ul class="event-link">
-              <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>London, WBS London Campus</a></li>
-              <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>10:00 March, 12-2020</a></li>
+              <li><a [routerLink]="['/su-kien/bai-viet', seo(post.title, post.def_code)]"><i class="fa fa-map-marker" aria-hidden="true"></i>{{ post.address }}</a></li>
+              <li><a [routerLink]="['/su-kien/bai-viet', seo(post.title, post.def_code)]"><i class="fa fa-calendar" aria-hidden="true"></i>{{ post.start_date }} - {{ post.end_date }}</a></li>
             </ul>
             <p class="box-item-actions">
-              <a href="#" class="button button-outline"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
-                Event</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="box-item">
-        <div class="events row">
-          <div class="col-md-4">
-            <img src="assets/images/event2.jpg">
-          </div>
-          <div class="col-md-8">
-            <a href="#" class="box-other-tile">ERC Research Showcase </a>
-            <ul class="event-link">
-              <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>London, WBS London Campus</a></li>
-              <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>10:30 January 20, 2020</a></li>
-            </ul>
-            <p class="box-item-actions">
-              <a href="#" class="button button-outline"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
-                Event</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="box-item">
-        <div class="events row">
-          <div class="col-md-4">
-            <img src="assets/images/event3.jpg">
-          </div>
-          <div class="col-md-8">
-            <a href="#" class="box-other-tile">What next for Women’s Enterprise Policy? </a>
-            <ul class="event-link">
-              <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>London, WBS London Campus</a></li>
-              <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>10:00 March, 12-2020</a></li>
-            </ul>
-            <p class="box-item-actions">
-              <a href="#" class="button button-outline"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
-                Event</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="box-item">
-        <div class="events row">
-          <div class="col-md-4">
-            <img src="assets/images/event4.jpg">
-          </div>
-          <div class="col-md-8">
-            <a href="#" class="box-other-tile">Longitudinal Small Business Survey Research Showcase </a>
-            <ul class="event-link">
-              <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>London, WBS London Campus</a></li>
-              <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>10:00 March, 12-2020</a></li>
-            </ul>
-            <p class="box-item-actions">
-              <a href="#" class="button button-outline"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
-                Event</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="box-item">
-        <div class="events row">
-          <div class="col-md-4">
-            <img src="assets/images/event5.jpg">
-          </div>
-          <div class="col-md-8">
-            <a href="#" class="box-other-tile">SERC Research Showcase Event </a>
-            <ul class="event-link">
-              <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>London, WBS London Campus</a></li>
-              <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>10:00 March, 12-2020</a></li>
-            </ul>
-            <p class="box-item-actions">
-              <a href="#" class="button button-outline"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
+              <a [routerLink]="['/su-kien/bai-viet', seo(post.title, post.def_code)]" class="button button-outline"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
                 Event</a>
             </p>
           </div>

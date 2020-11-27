@@ -1,18 +1,25 @@
 import { MenuResolve, BannerResolve } from './menu.resolver';
-import { PublicationPostResolve } from './publication.resolver';
-import { EventPostResolve, EventHomeDataResolve } from './event.resolver';
-import { NewsPostResolve } from './news.resolver';
+import { PublicationPostResolve, PublicationPostsResolve } from './publication.resolver';
+import { EventPostResolve, EventPostsResolve, EventHomeDataResolve } from './event.resolver';
+import { NewsPostResolve, NewsPostsResolve } from './news.resolver';
+import { ProjectPostResolve, ProjectPostsResolve } from './project.resolver';
 
 export { MenuResolve, BannerResolve } from './menu.resolver';
-export { PublicationPostResolve } from './publication.resolver';
-export { EventPostResolve, EventHomeDataResolve } from './event.resolver';
-export { NewsPostResolve } from './news.resolver';
+export { PublicationPostResolve, PublicationPostsResolve } from './publication.resolver';
+export { EventPostResolve, EventPostsResolve, EventHomeDataResolve } from './event.resolver';
+export { NewsPostResolve, NewsPostsResolve } from './news.resolver';
+export { ProjectPostResolve, ProjectPostsResolve } from './project.resolver';
 
 export const RESOLVERS = [
   MenuResolve,
   PublicationPostResolve,
+  PublicationPostsResolve,
   EventPostResolve,
+  EventPostsResolve,
   EventHomeDataResolve,
   NewsPostResolve,
-  BannerResolve
+  NewsPostsResolve,
+  BannerResolve,
+  ProjectPostResolve,
+  ProjectPostsResolve,
 ];
