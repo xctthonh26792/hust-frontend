@@ -8,8 +8,7 @@ export class ProjectPostResolve implements Resolve<Object> {
   constructor(private router: Router, private api: ProjectApi) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     let query = route.params.code
-    console.log(Utils.parseCode(query))
-    return this.api.get('SK2011001');
+    return this.api.get(Utils.parseCode(query));
   }
 }
 
@@ -23,6 +22,6 @@ export class ProjectPostsResolve implements Resolve<Object> {
     if (Utils.isStringEmpty(type)) {
       return this.api.fetch(+page, +quantity);
     }
-    return this.api.fetch(+page, +quantity);
+    return this.api.fetchByType(type, +page, +quantity);
   }
 }

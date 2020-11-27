@@ -15,11 +15,15 @@ export class ProjectsComponent {
     seo.set('Danh sách dự án')
     this.posts = _.get(route.snapshot.data, 'posts.models') || [];
     this.count = _.get(route.snapshot.data, 'posts.count') || 0;
+    this.childs = _.get(route.snapshot.data, 'posts.extras.childs') || [];
+    this.clength = _.size(this.childs)
     console.log(this)
   }
 
   posts: Array<any>
-  count: number
+  count: number;
+  childs: Array<any>
+  clength: number;
 
   seo(title: string, code: string) {
     return `${Utils.toSeo(title)}-${code}`
