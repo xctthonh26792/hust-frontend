@@ -5,16 +5,20 @@
       <div class="box-item" *ngFor="let post of posts">
         <div class="events row">
           <div class="col-md-4">
-            <img src="assets/images/event1.jpg">
+            <img [src]="post.logo | link">
           </div>
           <div class="col-md-8">
-            <a [routerLink]="['/su-kien/bai-viet', seo(post.title, post.def_code)]" class="box-other-tile">{{ post.title }}</a>
+            <a [routerLink]="['/su-kien/bai-viet', seo(post.name, post.def_code)]"
+              class="box-other-tile">{{ post.name }}</a>
             <ul class="event-link">
-              <li><a [routerLink]="['/su-kien/bai-viet', seo(post.title, post.def_code)]"><i class="fa fa-map-marker" aria-hidden="true"></i>{{ post.address }}</a></li>
-              <li><a [routerLink]="['/su-kien/bai-viet', seo(post.title, post.def_code)]"><i class="fa fa-calendar" aria-hidden="true"></i>{{ post.start_date }} - {{ post.end_date }}</a></li>
+              <li><a [routerLink]="['/su-kien/bai-viet', seo(post.name, post.def_code)]"><i class="fa fa-map-marker"
+                    aria-hidden="true"></i>{{ post.address }}</a></li>
+              <li><a [routerLink]="['/su-kien/bai-viet', seo(post.name, post.def_code)]"><i class="fa fa-calendar"
+                    aria-hidden="true"></i>{{ post.start_date }} - {{ post.end_date }}</a></li>
             </ul>
-            <p class="box-item-actions">
-              <a [routerLink]="['/su-kien/bai-viet', seo(post.title, post.def_code)]" class="button button-outline"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
+            <p class="box-item-actions" *ngIf="!post.is_finish">
+              <a [routerLink]="['/su-kien/bai-viet', seo(post.name, post.def_code)]" class="button button-outline"><i
+                  class="fa fa-user-circle-o" aria-hidden="true"></i>Register
                 Event</a>
             </p>
           </div>

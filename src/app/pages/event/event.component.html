@@ -1,12 +1,12 @@
 <section class="section section-content container">
-  <h1 class="page-title">{{ post.title }}</h1>
+  <h1 class="page-title">{{ post.name }}</h1>
   <div class="row">
     <div class="col-md-9 side-left">
       <div class="box-item item-project-view">
         <div [innerHtml]="post.description">
 
         </div>
-        <p class="box-item-actions">
+        <p class="box-item-actions" *ngIf="post.url">
           <button (click)="download()" class="button button-primary button-long"><i class="fa fa-youtube-play"
               aria-hidden="true"></i>Download</button>
         </p>
