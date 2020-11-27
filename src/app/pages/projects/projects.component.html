@@ -1,65 +1,37 @@
 <section class="section section-content container">
-  <h1 class="page-title">Project Categories</h1>
-  <div class="item-list category-list row">
-    <div class="col-md-4">
-      <div class="item">
-        <div class="item-category">
-          <a href="#">
-            <img alt="" src="assets/images/business1.jpg">
-            <span class="category-title">Current Projects</span>
-          </a>
+  <section *ngIf="clength > 0">
+    <h1 class="page-title">Project Categories</h1>
+    <div class="item-list category-list row">
+      <div class="col-md-4" *ngFor="let child of childs">
+        <div class="item">
+          <div class="item-category">
+            <a [routerLink]="['/du-an', seo(child.name, child.def_code)]">
+              <img alt="" src="assets/images/business1.jpg">
+              <span class="category-title">{{ child.name }}</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="item">
-        <div class="item-category">
-          <a href="#">
-            <img alt="" src="assets/images/business2.jpg">
-            <span class="category-title">Commissioned Projects</span>
-          </a>
+  </section>
+  <section>
+    <div>
+      <div class="box-item" *ngFor="let post of posts">
+        <div class="events row">
+          <div class="col-md-4">
+            <img src="assets/images/event1.jpg">
+          </div>
+          <div class="col-md-8">
+            <a [routerLink]="['/du-an/bai-viet', seo(post.name, post.def_code)]" class="box-other-tile">{{ post.name }}</a>
+            <ul class="event-link">
+              <li><a [routerLink]="['/du-an/bai-viet', seo(post.name, post.def_code)]"><i class="fa fa-calendar" aria-hidden="true"></i>{{ post.publication_date | date:'dd/MM/yyyy' }}</a></li>
+            </ul>
+            <p class="box-item-actions">
+              <a [routerLink]="['/du-an/bai-viet', seo(post.name, post.def_code)]" class="button button-outline"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Xem chi tiết</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="item">
-        <div class="item-category">
-          <a href="#">
-            <img alt="" src="assets/images/business1.jpg">
-            <span class="category-title">Other Projects</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="item">
-        <div class="item-category">
-          <a href="#">
-            <img alt="" src="assets/images/business2.jpg">
-            <span class="category-title">Completed Projects</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="item">
-        <div class="item-category">
-          <a href="#">
-            <img alt="" src="assets/images/business2.jpg">
-            <span class="category-title">Covid-19 Resource Directory</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="item">
-        <div class="item-category">
-          <a href="#">
-            <img alt="" src="assets/images/business2.jpg">
-            <span class="category-title">Events</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 </section>
