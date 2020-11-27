@@ -1,5 +1,5 @@
 <section class="section section-content container">
-  <h1 class="page-title">{{ post.title }}</h1>
+  <h1 class="page-title">{{ post.name }}</h1>
   <div class="row">
     <div class="col-md-9 side-left">
       <div class="box-item item-public">
@@ -13,7 +13,7 @@
         </p>
         <p class="sp-group" *ngIf="post.is_from_system">
           <a class="item-author" *ngFor="let author of post.system_authors">
-             <!-- TODO: change avatar -->
+            <!-- TODO: change avatar -->
             <img [src]="author.avatar | link"> {{ author.name }}
           </a>
           <!-- <a href="#" class="item-author"><img src="assets/images/avatar1.jpg">Maria</a> -->
@@ -27,7 +27,8 @@
           <span *ngFor="let theme of post.publication_themes">{{ theme.name }}</span>
         </p>
         <p class="box-item-actions" *ngIf="post.url">
-          <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Download Insight</button>
+          <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Download
+            Insight</button>
         </p>
       </div>
     </div>
