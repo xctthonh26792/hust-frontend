@@ -1,30 +1,20 @@
 <section class="section section-content container">
-  <h1 class="page-title">All Events</h1>
+  <h1 class="page-title">{{ post.title }}</h1>
   <div class="row">
     <div class="col-md-9 side-left">
       <div class="box-item item-project-view">
-        <p>How do employers talk about mental health issues in their workplaces? We use survey and narrative data
-          collected from Midlands firms in early 2020 prior to the first COVID-19 lockdown to examine two questions:
-          <br> - What do employers understand by ‘good mental health and wellbeing in the workplace’? How do employers
-          describe the impacts of mental health sickness absence on their firms?
-          <br> - In the light of the Covid-19 crisis, and of follow-up interviews we conducted in July and August 2020
-          after England’s first national lockdown, we also note changes in the broader business landscape which may have
-          implications
-          for the ways in which policymakers and employers develop and engage with workplace mental health initiatives
-          in the future. </p>
+        <div [innerHtml]="post.description">
+
+        </div>
         <p class="box-item-actions">
-          <a href="#" class="button button-primary button-long"><i class="fa fa-youtube-play" aria-hidden="true"></i>ERC
-            Showcase Presentation March 2019</a>
+          <button (click)="download()" class="button button-primary button-long"><i class="fa fa-youtube-play"
+              aria-hidden="true"></i>Download</button>
         </p>
-        <h5>Authors</h5>
+        <h5>Participants</h5>
         <ul class="list-people row">
-          <li class="col-md-3">
+          <li class="col-md-3" *ngFor="let participant of post.participants">
             <a href="#" class="people-image"><img src="assets/images/avatar1.jpg"></a>
-            <a href="#" class="people-name">Whisasrt</a>
-          </li>
-          <li class="col-md-3">
-            <a href="#" class="people-image"><img src="assets/images/avatar2.jpg"></a>
-            <a href="#" class="people-name">Whisasrt</a>
+            <a href="#" class="people-name">{{ participant.name }}</a>
           </li>
         </ul>
       </div>

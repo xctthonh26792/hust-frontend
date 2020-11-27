@@ -151,6 +151,9 @@ export class Utils {
   }
 
   static parseCode(value: string) {
+    if (Utils.isStringEmpty(value)) {
+      return ''
+    }
     const i = value.lastIndexOf('-');
     if (i >= 0) {
       return value.substr(i + 1);

@@ -8,7 +8,4 @@ import { Component, Input } from '@angular/core';
 export class NavMenuComponent {
   @Input("models") models: Array<any>
   @Input("path") path: string
-  constructor() {
-    console.log(this)
-  }
 }
