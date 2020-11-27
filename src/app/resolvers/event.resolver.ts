@@ -21,3 +21,12 @@ export class EventPostsResolve implements Resolve<Object> {
     return this.api.fetch(+page, +quantity);
   }
 }
+
+@Injectable()
+export class EventHomeDataResolve implements Resolve<Object> {
+  constructor(private router: Router, private api: EventApi) { }
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.api.get('top3');
+  }
+}
+
