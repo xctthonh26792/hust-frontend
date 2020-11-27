@@ -12,3 +12,12 @@ export class EventPostResolve implements Resolve<Object> {
     return this.api.get('SK2011001');
   }
 }
+
+@Injectable()
+export class EventHomeDataResolve implements Resolve<Object> {
+  constructor(private router: Router, private api: EventApi) { }
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.api.get('top3');
+  }
+}
+

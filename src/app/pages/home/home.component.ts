@@ -4,6 +4,7 @@ import { SeoService } from 'src/services';
 import { SwiperOptions } from 'swiper';
 import { environment } from '@env';
 import _ from 'lodash';
+import { Utils } from '../../utils'
 
 @Component({
   selector: 'app-home',
@@ -28,11 +29,13 @@ export class HomeComponent implements OnInit {
     seo.set('Trang chủ')
     this.url = environment.api_url;
     this.data = _.get(route.snapshot.data, 'data');
-    console.log(this.data)
+    this.events = _.get(route.snapshot.data, 'events.models');
+    console.log(this.events)
   }
 
   slides: Array<any>;
-  data: Array<any>
+  data: Array<any>;
+  events: Array<any>;
   url: string;
 
   ngOnInit() {
@@ -44,6 +47,10 @@ export class HomeComponent implements OnInit {
       })
       console.log(this.slides)
     })
+  }
+
+  seo(title: string, code: string) {
+    return `${Utils.toSeo(title)}-${code}`
   }
 
 }
