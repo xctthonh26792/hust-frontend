@@ -15,7 +15,6 @@ export class PublicationsComponent {
     seo.set('Danh sách xuất bản')
     this.posts = _.get(route.snapshot.data, 'posts.models') || [];
     this.count = _.get(route.snapshot.data, 'posts.count') || 0;
-    console.log(this)
   }
 
   posts: Array<any>

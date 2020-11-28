@@ -5,22 +5,12 @@
         <!-- <i class="fa fa-caret-right" aria-hidden="true"></i> -->
         <i class="fa fa-caret-right" aria-hidden="true" *ngIf="model.childrens"></i>
       </a>
-      <nav-menu [models]="model.childrens" [path]="path" *ngIf="model.childrens"></nav-menu>
-      <!-- <ul class="nav-sub2menu">
-        <li class="nav-sub2item">
-          <a href="#">Sub2</a>
+      <!-- <nav-menu [models]="model.childrens" [path]="path" *ngIf="model.childrens"></nav-menu> -->
+      <ul class="nav-sub2menu" *ngIf="model.childrens">
+        <li class="nav-sub2item" *ngFor="let child of model.childrens">
+          <a [routerLink]="[path, child.url]">{{ child.name }}</a>
         </li>
-        <li class="nav-sub2item">
-          <a href="#">Sub2</a>
-        </li>
-        <li class="nav-sub2item">
-          <a href="#">Sub2</a>
-        </li>
-        <li class="nav-sub2item">
-          <a href="#">Sub2</a>
-        </li>
-
-      </ul> -->
+      </ul>
     </li>
   </ul>
 </ng-container>

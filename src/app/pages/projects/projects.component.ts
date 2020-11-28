@@ -17,7 +17,6 @@ export class ProjectsComponent {
     this.count = _.get(route.snapshot.data, 'posts.count') || 0;
     this.childs = _.get(route.snapshot.data, 'posts.extras.childs') || [];
     this.clength = _.size(this.childs)
-    console.log(this)
   }
 
   posts: Array<any>

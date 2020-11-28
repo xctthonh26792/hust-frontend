@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent {
+  constructor() {
+
+  }
 }

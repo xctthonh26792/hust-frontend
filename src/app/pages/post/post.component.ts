@@ -16,7 +16,6 @@ export class PostComponent {
   constructor(seo: SeoService, route: ActivatedRoute) {
     seo.set('Chi tiết bài viết')
     this.post = _.get(route.snapshot.data, 'post');
-    console.log(this)
   }
 
   post: any
@@ -24,7 +23,6 @@ export class PostComponent {
   download() {
     let url = _.get(this.post, 'url')
     const link = `${environment.api_url}/${url}`
-    console.log('download from', link)
   }
 
   seo(title: string, code: string) {

@@ -18,7 +18,7 @@
         <nav-menu [models]="models.projects" path="/du-an" *ngIf="models && models.projects"></nav-menu>
       </li>
       <li class="nav-item nav-drop nav-parent">
-        <a routerLink="/su-kien">Events
+        <a routerLink="/su-kien">Sự kiện
           <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && models.events"></i>
         </a>
         <nav-menu [models]="models.events" path="/su-kien" *ngIf="models && models.events"></nav-menu>
@@ -29,12 +29,12 @@
         </a>
         <nav-menu [models]="models.news" path="/tin-tuc" *ngIf="models && models.news"></nav-menu>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a routerLink="/lien-he">Contact</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a routerLink="/current-projects">Current Projects</a>
-      </li>
+      </li> -->
     </ul>
   </div>
 

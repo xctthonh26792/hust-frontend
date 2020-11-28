@@ -14,7 +14,6 @@ export class PublicationComponent {
   constructor(seo: SeoService, route: ActivatedRoute) {
     seo.set('Thông tin xuất bản')
     this.post = _.get(route.snapshot.data, 'post');
-    console.log(this)
   }
 
   post: any
@@ -22,6 +21,5 @@ export class PublicationComponent {
   download() {
     let url = _.get(this.post, 'url')
     const link = `${environment.api_url}/${url}`
-    console.log('download from', link)
   }
 }

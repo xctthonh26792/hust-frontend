@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit {
     this.url = environment.api_url;
     this.data = _.get(route.snapshot.data, 'data');
     this.events = _.get(route.snapshot.data, 'events.models');
-    console.log(this.events)
   }
 
   slides: Array<any>;
@@ -40,12 +39,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.slides = []
-    console.log(_.get(this.data, 'urls'))
     _.forEach(_.get(this.data, 'urls'), x => {
       this.slides.push({
         image: `${this.url}/${x}`,
       })
-      console.log(this.slides)
     })
   }
 
