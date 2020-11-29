@@ -10,6 +10,7 @@ import { CurrentProjectsComponent } from './current-projects/current-projects.co
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
 import { ContactComponent } from './contact/contact.component';
+import { SubscribeActionComponent } from './subscribe.action/subscribe.action.component';
 
 export { ContainerComponent } from './container/container.component';
 export { HomeComponent } from './home/home.component';
@@ -23,6 +24,7 @@ export { CurrentProjectsComponent } from './current-projects/current-projects.co
 export { PostsComponent } from './posts/posts.component';
 export { PostComponent } from './post/post.component';
 export { ContactComponent } from './contact/contact.component';
+export { SubscribeActionComponent } from './subscribe.action/subscribe.action.component';
 
 export const PAGES = [
   ContainerComponent,
@@ -37,4 +39,5 @@ export const PAGES = [
   PostsComponent,
   PostComponent,
   ContactComponent,
+  SubscribeActionComponent
 ]

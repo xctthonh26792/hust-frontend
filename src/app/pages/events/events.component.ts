@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SeoService } from 'src/services';
-
+import { SubscribeActionComponent } from '../subscribe.action/subscribe.action.component';
 import _ from 'lodash';
 import { Utils } from 'src/app/utils';
 
@@ -23,4 +23,5 @@ export class EventsComponent {
   seo(title: string, code: string) {
     return `${Utils.toSeo(title)}-${code}`
   }
+
 }
