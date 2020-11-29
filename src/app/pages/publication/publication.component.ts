@@ -21,5 +21,6 @@ export class PublicationComponent {
   download() {
     let url = _.get(this.post, 'url')
     const link = `${environment.api_url}/${url}`
+    window.open(link)
   }
 }

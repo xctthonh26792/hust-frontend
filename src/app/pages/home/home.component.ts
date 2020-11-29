@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     seo.set('Trang chủ')
     this.url = environment.api_url;
     this.data = _.get(route.snapshot.data, 'data');
-    this.events = _.get(route.snapshot.data, 'events.models');
+    this.events = _.get(route.snapshot.data, 'events');
   }
 
   slides: Array<any>;

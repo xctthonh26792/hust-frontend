@@ -22,6 +22,7 @@ export class ProjectComponent {
   download() {
     let url = _.get(this.post, 'url')
     const link = `${environment.api_url}/${url}`
+    window.open(link)
   }
 
   seo(title: string, code: string) {
