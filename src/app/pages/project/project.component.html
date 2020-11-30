@@ -4,15 +4,20 @@
     <div class="col-md-12 side-left">
       <div class="box-item item-project-view">
         <div [innerHtml]="post.description"></div>
-        <p class="box-item-actions">
-          <button (click)="download()" class="button button-primary button-long"><i class="fa fa-youtube-play"
-              aria-hidden="true"></i>{{ post.title }}</button>
+        <p class="box-item-actions" *ngIf="post.url | isStringNotEmpty">
+          <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Tải tài
+            liệu</button>
+        </p>
+        <p class="box-item-actions" *ngIf="post.source | isStringNotEmpty">
+          <button class="button button-primary" (click)="download_source()"><i class="fa fa-file-text"></i>Tải tài
+            liệu</button>
         </p>
         <div *ngIf="post.participants | isArrayNotEmpty">
           <h5>Những người tham gia</h5>
           <ul class="list-people row">
             <li class="col-md-3" *ngFor="let participant of post.participants">
-              <a class="people-image" *ngIf="participant.logo | isStringNotEmpty"><img [src]="participant.logo | link"></a>
+              <a class="people-image" *ngIf="participant.logo | isStringNotEmpty"><img
+                  [src]="participant.logo | link"></a>
               <a class="people-name">{{ participant.name }}</a>
             </li>
           </ul>

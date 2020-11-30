@@ -24,8 +24,13 @@
             <span *ngFor="let tag of post.tags">{{ tag }}</span>
           </p>
         </div>
-        <p class="box-item-actions" *ngIf="post.url">
-          <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Tải tài liệu</button>
+        <p class="box-item-actions" *ngIf="post.url | isStringNotEmpty">
+          <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Tải tài
+            liệu</button>
+        </p>
+        <p class="box-item-actions" *ngIf="post.source | isStringNotEmpty">
+          <button class="button button-primary" (click)="download_source()"><i class="fa fa-file-text"></i>Tải tài
+            liệu</button>
         </p>
         <div *ngIf="post.relative_events | isArrayNotEmpty">
           <h5>Các sự kiện liên quan</h5>

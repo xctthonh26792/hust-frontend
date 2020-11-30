@@ -6,7 +6,7 @@
         <div [innerHtml]="post.description">
 
         </div>
-        <p class="box-item-actions">
+        <p class="box-item-actions" *ngIf="!post.is_finish">
           <button (click)="register()" class="button button-primary button-long"><i class="fa fa-youtube-play"
               aria-hidden="true"></i>Đăng ký tham dự</button>
         </p>
@@ -14,7 +14,8 @@
           <h5>Những người tham gia</h5>
           <ul class="list-people row">
             <li class="col-md-3" *ngFor="let participant of post.participants">
-              <a class="people-image" *ngIf="participant.avatar | isStringNotEmpty"><img [src]="participant.avatar | link"></a>
+              <a class="people-image" *ngIf="participant.avatar | isStringNotEmpty"><img
+                  [src]="participant.avatar | link"></a>
               <a class="people-name">{{ participant.name }}</a>
             </li>
           </ul>

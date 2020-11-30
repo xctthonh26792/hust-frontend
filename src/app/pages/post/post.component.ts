@@ -28,6 +28,11 @@ export class PostComponent {
     window.open(link)
   }
 
+  download_source() {
+    let url = _.get(this.post, 'source')
+    window.open(url)
+  }
+
   seo(title: string, code: string) {
     return `${Utils.toSeo(title)}-${code}`
   }
