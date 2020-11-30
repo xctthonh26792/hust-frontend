@@ -767,3 +767,15 @@ ul li {
     }
   }
 }
+
+.toastr-container {
+  position: fixed;
+  right: 20px;
+  top: 30px;
+  ngb-toast .toast-body {
+    color: #fff;
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

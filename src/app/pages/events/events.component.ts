@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SeoService } from 'src/services';
+import { ModalService, SeoService } from 'src/services';
 import { SubscribeActionComponent } from '../subscribe.action/subscribe.action.component';
 import _ from 'lodash';
 import { Utils } from 'src/app/utils';
+import { RegEventComponent } from 'src/app/dialogs';
 
 @Component({
   selector: 'app-events',
@@ -11,10 +12,12 @@ import { Utils } from 'src/app/utils';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent {
-  constructor(seo: SeoService, private route: ActivatedRoute) {
+  constructor(seo: SeoService, private modal: ModalService, private route: ActivatedRoute) {
     seo.set('Sự kiện')
-    this.posts = _.get(route.snapshot.data, 'posts.models') || [];
-    this.count = _.get(route.snapshot.data, 'posts.count') || 0;
+    route.data.subscribe((data) => {
+      this.posts = _.get(data, 'posts.models') || [];
+      this.count = _.get(data, 'posts.count') || 0;
+    })
   }
 
   posts: Array<any>
@@ -24,4 +27,10 @@ export class EventsComponent {
     return `${Utils.toSeo(title)}-${code}`
   }
 
+  register(post) {
+    console.log(post)
+    var modal = this.modal.shown(RegEventComponent)
+    modal.componentInstance.post = post
+    console.log(modal)
+  }
 }

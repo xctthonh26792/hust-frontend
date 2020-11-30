@@ -9,7 +9,6 @@ import {
   PublicationComponent,
   ProjectsComponent,
   ProjectComponent,
-  CurrentProjectsComponent,
   PostsComponent,
   PostComponent,
   ContactComponent,
@@ -23,6 +22,7 @@ const routes: Routes = [
   {
     path: '',
     component: ContainerComponent,
+    runGuardsAndResolvers: 'always',
     resolve: {
       menu: MenuResolve,
       data: BannerResolve,
@@ -95,10 +95,6 @@ const routes: Routes = [
         resolve: {
           post: ProjectPostResolve
         }
-      },
-      {
-        path: 'current-projects',
-        component: CurrentProjectsComponent
       },
       {
         path: 'tin-tuc',

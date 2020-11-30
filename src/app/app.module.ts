@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 
 import { COMPONENTS } from './components';
 import { PAGES } from './pages';
+import { DIALOGS } from './dialogs';
 import { DIRECTIVES } from './directives'
 import { APIS } from './apis'
 import { RESOLVERS } from './resolvers';
@@ -19,6 +20,7 @@ import {
   SwiperModule, SwiperConfigInterface,
   SWIPER_CONFIG
 } from 'ngx-swiper-wrapper';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -37,7 +39,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ...COMPONENTS,
     ...PAGES,
     ...PIPES,
-    ...DIRECTIVES
+    ...DIRECTIVES,
+    ...DIALOGS
   ],
   imports: [
     SwiperModule,
@@ -45,7 +48,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     CommonModule,
     AppRoutingModule,
     ServicesModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [...APIS, ...RESOLVERS, {
     provide: SWIPER_CONFIG,

@@ -14,7 +14,9 @@ import { Utils } from '../../utils';
 export class ProjectComponent {
   constructor(seo: SeoService, private route: ActivatedRoute) {
     seo.set('Thông tin dự án')
-    this.post = _.get(route.snapshot.data, 'post');
+    route.data.subscribe((data) => {
+      this.post = _.get(data, 'post');
+    })
   }
 
   post: any

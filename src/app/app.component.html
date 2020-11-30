@@ -1,1 +1,8 @@
 <router-outlet></router-outlet>
+
+<div class="toastr-container">
+<ngb-toast *ngFor="let toast of toastr.messages" [class]="toast.classname" [autohide]="true"
+  [delay]="toast.delay || 5000" (hidden)="toastr.remove(toast)" aria-live="polite" aria-atomic="true">
+  {{ toast.message }}
+</ngb-toast>
+</div>

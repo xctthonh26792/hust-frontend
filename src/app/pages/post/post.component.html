@@ -5,48 +5,58 @@
       <div class="box-item item-public">
         <h5>Published: {{ post.publication_date | date:'dd/MM/yyyy' }}</h5>
         <div [innerHtml]="post.description"></div>
-        <h5>Authors</h5>
-        <p class="sp-group" *ngIf="!post.is_from_system">
-          <a class="item-author" *ngFor="let author of post.authors">
-            <span>{{ author.name }}</span>
-          </a>
-        </p>
-        <p class="sp-group" *ngIf="post.is_from_system">
-          <a class="item-author" *ngFor="let author of post.system_authors">
-            <img [src]="author.avatar | link"> {{ author.name }}
-          </a>
-        </p>
-        <h5>Tags</h5>
-        <p class="sp-group">
-          <span *ngFor="let tag of post.tags">{{ tag }}</span>
-        </p>
+        <div *ngIf="(post.authors | isArrayNotEmpty) || (post.system_authors | isArrayNotEmpty)">
+          <h5>Authors</h5>
+          <p class="sp-group" *ngIf="!post.is_from_system">
+            <a class="item-author" *ngFor="let author of post.authors">
+              <span>{{ author.name }}</span>
+            </a>
+          </p>
+          <p class="sp-group" *ngIf="post.is_from_system">
+            <a class="item-author" *ngFor="let author of post.system_authors">
+              <img [src]="author.avatar | link"> {{ author.name }}
+            </a>
+          </p>
+        </div>
+        <div *ngIf="post.tags | isArrayNotEmpty">
+          <h5>Tags</h5>
+          <p class="sp-group">
+            <span *ngFor="let tag of post.tags">{{ tag }}</span>
+          </p>
+        </div>
         <p class="box-item-actions" *ngIf="post.url">
           <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Download
             Insight</button>
         </p>
-        <h5>Relative events</h5>
-        <div>
-          <a *ngFor="let event of post.relative_events"
-            [routerLink]="['/su-kien/bai-viet', seo(event.name, event.def_code)]">
-            <div>{{ event.name }}</div>
-            <div>{{ event.start_date | date:'dd/MM/yyyy' }} - {{ event.end_date | date:'dd/MM/yyyy' }}</div>
-          </a>
+        <div *ngIf="post.relative_events | isArrayNotEmpty">
+          <h5>Relative events</h5>
+          <div>
+            <a *ngFor="let event of post.relative_events"
+              [routerLink]="['/su-kien/bai-viet', seo(event.name, event.def_code)]">
+              <div>{{ event.name }}</div>
+              <div>{{ event.start_date | date:'dd/MM/yyyy' }} - {{ event.end_date | date:'dd/MM/yyyy' }}</div>
+            </a>
+          </div>
         </div>
-        <h5>Relative publications</h5>
-        <div>
-          <a *ngFor="let publication of post.relative_publications"
-            [routerLink]="['/xuat-ban/bai-viet', seo(publication.name, publication.def_code)]">
-            <div>{{ publication.name }}</div>
-            <div>{{ publication.publication_date | date:'dd/MM/yyyy' }}</div>
-          </a>
+        <div *ngIf="post.relative_publications | isArrayNotEmpty">
+          <h5>Relative publications</h5>
+          <div>
+            <a *ngFor="let publication of post.relative_publications"
+              [routerLink]="['/xuat-ban/bai-viet', seo(publication.name, publication.def_code)]">
+              <div>{{ publication.name }}</div>
+              <div>{{ publication.publication_date | date:'dd/MM/yyyy' }}</div>
+            </a>
+          </div>
         </div>
-        <h5>Relative projects</h5>
-        <div>
-          <a *ngFor="let project of post.relative_projects"
-            [routerLink]="['/du-an/bai-viet', seo(project.name, project.def_code)]">
-            <div>{{ project.name }}</div>
-            <div>{{ project.publication_date | date:'dd/MM/yyyy' }}</div>
-          </a>
+        <div *ngIf="post.relative_projects | isArrayNotEmpty">
+          <h5>Relative projects</h5>
+          <div>
+            <a *ngFor="let project of post.relative_projects"
+              [routerLink]="['/du-an/bai-viet', seo(project.name, project.def_code)]">
+              <div>{{ project.name }}</div>
+              <div>{{ project.publication_date | date:'dd/MM/yyyy' }}</div>
+            </a>
+          </div>
         </div>
       </div>
     </div>

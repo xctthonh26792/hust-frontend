@@ -13,10 +13,8 @@
         </p>
         <p class="sp-group" *ngIf="post.is_from_system">
           <a class="item-author" *ngFor="let author of post.system_authors">
-            <!-- TODO: change avatar -->
-            <img [src]="author.avatar | link"> {{ author.name }}
+            <img [src]="author.avatar | link" *ngIf="author.avatar | isStringNotEmpty"> {{ author.name }}
           </a>
-          <!-- <a href="#" class="item-author"><img src="assets/images/avatar1.jpg">Maria</a> -->
         </p>
         <h5>Tags</h5>
         <p class="sp-group">

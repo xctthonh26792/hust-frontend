@@ -14,7 +14,9 @@ import _ from 'lodash'
 export class EventComponent {
   constructor(seo: SeoService, route: ActivatedRoute) {
     seo.set('Thông tin sự kiện')
-    this.post = _.get(route.snapshot.data, 'post');
+    route.data.subscribe((data) => {
+      this.post = _.get(data, 'post');
+    })
   }
 
   post: any

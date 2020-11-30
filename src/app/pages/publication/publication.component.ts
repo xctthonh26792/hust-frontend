@@ -13,7 +13,9 @@ import { environment } from '@env';
 export class PublicationComponent {
   constructor(seo: SeoService, route: ActivatedRoute) {
     seo.set('Thông tin xuất bản')
-    this.post = _.get(route.snapshot.data, 'post');
+    route.data.subscribe((data) => {
+      this.post = _.get(data, 'post');
+    })
   }
 
   post: any

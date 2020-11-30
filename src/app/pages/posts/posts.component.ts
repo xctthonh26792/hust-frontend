@@ -13,8 +13,10 @@ import { Utils } from 'src/app/utils';
 export class PostsComponent {
   constructor(seo: SeoService, private route: ActivatedRoute) {
     seo.set('Tin tức')
-    this.posts = _.get(route.snapshot.data, 'posts.models') || [];
-    this.count = _.get(route.snapshot.data, 'posts.count') || 0;
+    route.data.subscribe((data) => {
+      this.posts = _.get(data, 'posts.models') || [];
+      this.count = _.get(data, 'posts.count') || 0;
+    })
   }
 
   posts: Array<any>

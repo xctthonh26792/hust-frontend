@@ -13,10 +13,12 @@ import { Utils } from 'src/app/utils';
 export class ProjectsComponent {
   constructor(seo: SeoService, private route: ActivatedRoute) {
     seo.set('Danh sách dự án')
-    this.posts = _.get(route.snapshot.data, 'posts.models') || [];
-    this.count = _.get(route.snapshot.data, 'posts.count') || 0;
-    this.childs = _.get(route.snapshot.data, 'posts.extras.childs') || [];
-    this.clength = _.size(this.childs)
+    this.route.data.subscribe((data) => {
+      this.posts = _.get(data, 'posts.models') || [];
+      this.count = _.get(data, 'posts.count') || 0;
+      this.childs = _.get(data, 'posts.extras.childs') || [];
+      this.clength = _.size(this.childs)
+    })
   }
 
   posts: Array<any>

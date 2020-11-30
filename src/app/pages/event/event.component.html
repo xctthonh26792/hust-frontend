@@ -10,13 +10,15 @@
           <button (click)="download()" class="button button-primary button-long"><i class="fa fa-youtube-play"
               aria-hidden="true"></i>Download</button>
         </p>
-        <h5>Participants</h5>
-        <ul class="list-people row">
-          <li class="col-md-3" *ngFor="let participant of post.participants">
-            <a href="#" class="people-image"><img src="assets/images/avatar1.jpg"></a>
-            <a href="#" class="people-name">{{ participant.name }}</a>
-          </li>
-        </ul>
+        <div *ngIf="post.participants | isArrayNotEmpty">
+          <h5>Participants</h5>
+          <ul class="list-people row">
+            <li class="col-md-3" *ngFor="let participant of post.participants">
+              <a href="#" class="people-image" *ngIf="participant.avatar | isStringNotEmpty"><img src="assets/images/avatar1.jpg"></a>
+              <a class="people-name">{{ participant.name }}</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="col-md-3 side-right">
@@ -29,63 +31,6 @@
           <a href="#" class="button button-primary">Subscribe</a>
         </form>
       </div>
-      <!-- <div class="box-item">
-        <h4 class="box-other-tile">Other Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div>
-      <div class="box-item">
-        <h4 class="box-other-tile">Events Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div>
-      <div class="box-item">
-        <h4 class="box-other-tile">News Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div> -->
     </div>
   </div>
 </section>

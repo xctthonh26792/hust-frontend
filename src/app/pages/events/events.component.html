@@ -17,9 +17,9 @@
                     aria-hidden="true"></i>{{ post.start_date }} - {{ post.end_date }}</a></li>
             </ul>
             <p class="box-item-actions" *ngIf="!post.is_finish">
-              <a [routerLink]="['/su-kien/bai-viet', seo(post.name, post.def_code)]" class="button button-outline"
+              <button class="button button-outline"
                 (click)="register(post)"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
-                Event</a>
+                Event</button>
             </p>
           </div>
         </div>

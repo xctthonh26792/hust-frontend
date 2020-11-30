@@ -15,7 +15,9 @@ import { Utils } from '../../utils'
 export class PostComponent {
   constructor(seo: SeoService, route: ActivatedRoute) {
     seo.set('Chi tiết bài viết')
-    this.post = _.get(route.snapshot.data, 'post');
+    route.data.subscribe((data) => {
+      this.post = _.get(data, 'post');
+    })
   }
 
   post: any

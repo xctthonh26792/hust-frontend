@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LocalizeService, SeoService } from 'src/services';
+import { ToastrService } from 'src/services';
 
 const PREFIX = {
   vi: 'Viện khoa học & Công nghệ môi trường',
@@ -12,7 +13,7 @@ const PREFIX = {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  constructor(private seo: SeoService, private localize: LocalizeService) {
+  constructor(private seo: SeoService, private localize: LocalizeService, public toastr: ToastrService) {
     this.seo.prefix(PREFIX[this.localize.lang])
   }
 
