@@ -1,13 +1,13 @@
 <section class="section section-content container">
   <h1 class="page-title">Tin tức</h1>
   <div class="row">
-    <div class="col-md-9 side-left">
+    <div class="col-md-12 side-left">
       <div class="box-item item-public" *ngFor="let post of posts">
         <a [routerLink]="['/tin-tuc/bai-viet', seo(post.name, post.def_code)]"
           class="item-public-tile">{{ post.name }}</a>
-        <h5>Published: {{ post.publication_date | date:'dd/MM/yyyy' }}</h5>
+        <h5>Ngày xuất bản: {{ post.publication_date | date:'dd/MM/yyyy' }}</h5>
         <div [innerHtml]="post.short_description"></div>
-        <h5>Authors</h5>
+        <h5>Tác giả</h5>
         <p class="sp-group" *ngIf="!post.is_from_system">
           <a class="item-author" *ngFor="let author of post.authors">
             {{ author.name }}
@@ -15,84 +15,17 @@
         </p>
         <p class="sp-group" *ngIf="post.is_from_system">
           <a class="item-author" *ngFor="let author of post.system_authors">
-            <!-- TODO: change avatar -->
-            <img [src]="author.avatar | link"> {{ author.name }}
+            <img [src]="author.avatar | link" *ngIf="author.avatar | isStringNotEmpty"> {{ author.name }}
           </a>
-          <!-- <a href="#" class="item-author"><img src="assets/images/avatar1.jpg">Maria</a> -->
         </p>
         <p class="box-item-actions">
           <a [routerLink]="['/tin-tuc/bai-viet', seo(post.name, post.def_code)]" class="button button-primary"><i
               class="fa fa-file-text"></i>Xem chi tiết</a>
         </p>
       </div>
+      <ngb-pagination [(page)]="page" [pageSize]="10" [collectionSize]="count" (pageChange)="changed($event)"
+        *ngIf="count > 0"></ngb-pagination>
     </div>
-    <div class="col-md-3 side-right">
-      <div class="box-item box-subscribe">
-        <h3 class="box-item-tile">Subscribe for Newsletter</h3>
-        <form class="form form-subscribe">
-          <input class="input" placeholder="First name">
-          <input class="input" placeholder="Last name">
-          <input class="input" placeholder="Your email">
-          <a href="#" class="button button-primary">Subscribe</a>
-        </form>
-      </div>
-      <!-- <div class="box-item">
-        <h4 class="box-other-tile">Other Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div>
-      <div class="box-item">
-        <h4 class="box-other-tile">Events Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div>
-      <div class="box-item">
-        <h4 class="box-other-tile">News Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div> -->
-    </div>
+
   </div>
 </section>

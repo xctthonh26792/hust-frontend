@@ -1,6 +1,6 @@
 <section class="section section-content container">
-  <section *ngIf="clength > 0">
-    <h1 class="page-title">Project Categories</h1>
+  <section *ngIf="childs | isArrayNotEmpty">
+    <h1 class="page-title">Danh mục dự án</h1>
     <div class="item-list category-list row">
       <div class="col-md-4" *ngFor="let child of childs">
         <div class="item">
@@ -14,8 +14,9 @@
       </div>
     </div>
   </section>
-  <section>
+  <section *ngIf="posts | isArrayNotEmpty">
     <div>
+      <h1 class="page-title">Danh sách các dự án trong danh mục</h1>
       <div class="box-item" *ngFor="let post of posts">
         <div class="events row">
           <div class="col-md-4">
@@ -32,6 +33,7 @@
           </div>
         </div>
       </div>
+      <ngb-pagination [(page)]="page" [pageSize]="10" [collectionSize]="count" (pageChange)="changed($event)" *ngIf="count > 0"></ngb-pagination>
     </div>
   </section>
 </section>

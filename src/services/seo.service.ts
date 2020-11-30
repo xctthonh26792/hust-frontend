@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
+import _ from 'lodash';
+
 @Injectable()
 export class SeoService {
   _prefix: string;
@@ -21,6 +23,10 @@ export class SeoService {
   }
 
   private show() {
+    if (this._title === null || this._title === undefined || this._title === '') {
+      this.title.setTitle(`${this._prefix}`);
+      return; 
+    }
     this.title.setTitle(`${this._title} - ${this._prefix}`);
   }
 }

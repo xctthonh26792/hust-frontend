@@ -1,12 +1,12 @@
 <section class="section section-content container">
   <h1 class="page-title">{{ post.name }}</h1>
   <div class="row">
-    <div class="col-md-9 side-left">
+    <div class="col-md-12 side-left">
       <div class="box-item item-public">
-        <h5>Published: {{ post.publication_date | date:'dd/MM/yyyy' }}</h5>
+        <h5>Ngày xuất bản: {{ post.publication_date | date:'dd/MM/yyyy' }}</h5>
         <div [innerHtml]="post.description"></div>
         <div *ngIf="(post.authors | isArrayNotEmpty) || (post.system_authors | isArrayNotEmpty)">
-          <h5>Authors</h5>
+          <h5>Các tác giả</h5>
           <p class="sp-group" *ngIf="!post.is_from_system">
             <a class="item-author" *ngFor="let author of post.authors">
               <span>{{ author.name }}</span>
@@ -19,17 +19,16 @@
           </p>
         </div>
         <div *ngIf="post.tags | isArrayNotEmpty">
-          <h5>Tags</h5>
+          <h5>Từ khóa</h5>
           <p class="sp-group">
             <span *ngFor="let tag of post.tags">{{ tag }}</span>
           </p>
         </div>
         <p class="box-item-actions" *ngIf="post.url">
-          <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Download
-            Insight</button>
+          <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Tải tài liệu</button>
         </p>
         <div *ngIf="post.relative_events | isArrayNotEmpty">
-          <h5>Relative events</h5>
+          <h5>Các sự kiện liên quan</h5>
           <div>
             <a *ngFor="let event of post.relative_events"
               [routerLink]="['/su-kien/bai-viet', seo(event.name, event.def_code)]">
@@ -39,7 +38,7 @@
           </div>
         </div>
         <div *ngIf="post.relative_publications | isArrayNotEmpty">
-          <h5>Relative publications</h5>
+          <h5>Các ấn phẩm liên quan</h5>
           <div>
             <a *ngFor="let publication of post.relative_publications"
               [routerLink]="['/xuat-ban/bai-viet', seo(publication.name, publication.def_code)]">
@@ -49,7 +48,7 @@
           </div>
         </div>
         <div *ngIf="post.relative_projects | isArrayNotEmpty">
-          <h5>Relative projects</h5>
+          <h5>Các dự án liên quan</h5>
           <div>
             <a *ngFor="let project of post.relative_projects"
               [routerLink]="['/du-an/bai-viet', seo(project.name, project.def_code)]">
@@ -59,36 +58,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-3 side-right">
-      <div class="box-item box-subscribe">
-        <h3 class="box-item-tile">Subscribe for Newsletter</h3>
-        <form class="form form-subscribe">
-          <input class="input" placeholder="First name">
-          <input class="input" placeholder="Last name">
-          <input class="input" placeholder="Your email">
-          <a href="#" class="button button-primary">Subscribe</a>
-        </form>
-      </div>
-      <!-- <div class="box-item">
-        <h4 class="box-other-tile">Other Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div> -->
     </div>
   </div>
 </section>

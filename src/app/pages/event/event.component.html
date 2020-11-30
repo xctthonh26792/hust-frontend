@@ -6,15 +6,15 @@
         <div [innerHtml]="post.description">
 
         </div>
-        <p class="box-item-actions" *ngIf="post.url">
-          <button (click)="download()" class="button button-primary button-long"><i class="fa fa-youtube-play"
-              aria-hidden="true"></i>Download</button>
+        <p class="box-item-actions">
+          <button (click)="register()" class="button button-primary button-long"><i class="fa fa-youtube-play"
+              aria-hidden="true"></i>Đăng ký tham dự</button>
         </p>
         <div *ngIf="post.participants | isArrayNotEmpty">
-          <h5>Participants</h5>
+          <h5>Những người tham gia</h5>
           <ul class="list-people row">
             <li class="col-md-3" *ngFor="let participant of post.participants">
-              <a href="#" class="people-image" *ngIf="participant.avatar | isStringNotEmpty"><img src="assets/images/avatar1.jpg"></a>
+              <a class="people-image" *ngIf="participant.avatar | isStringNotEmpty"><img [src]="participant.avatar | link"></a>
               <a class="people-name">{{ participant.name }}</a>
             </li>
           </ul>
@@ -23,12 +23,12 @@
     </div>
     <div class="col-md-3 side-right">
       <div class="box-item box-subscribe">
-        <h3 class="box-item-tile">Subscribe for Newsletter</h3>
+        <h3 class="box-item-tile">Đăng ký nhận bản tin</h3>
         <form class="form form-subscribe">
-          <input class="input" placeholder="First name">
-          <input class="input" placeholder="Last name">
-          <input class="input" placeholder="Your email">
-          <a href="#" class="button button-primary">Subscribe</a>
+          <input class="input" placeholder="Họ và tên">
+          <input class="input" placeholder="Email">
+          <input class="input" placeholder="Số điện thoại">
+          <a href="#" class="button button-primary">Đăng ký</a>
         </form>
       </div>
     </div>

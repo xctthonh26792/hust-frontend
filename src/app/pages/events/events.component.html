@@ -1,7 +1,7 @@
 <section class="section section-content container">
   <h1 class="page-title">Sự kiện</h1>
   <div class="row">
-    <div class="col-md-9 side-left">
+    <div class="col-md-12 side-left">
       <div class="box-item" *ngFor="let post of posts">
         <div class="events row">
           <div class="col-md-4">
@@ -18,80 +18,13 @@
             </ul>
             <p class="box-item-actions" *ngIf="!post.is_finish">
               <button class="button button-outline"
-                (click)="register(post)"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Register
-                Event</button>
+                (click)="register(post)"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Đăng ký tham dự</button>
             </p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-3 side-right">
-      <div class="box-item box-subscribe">
-        <h3 class="box-item-tile">Subscribe for Newsletter</h3>
-        <form class="form form-subscribe">
-          <input class="input" placeholder="First name">
-          <input class="input" placeholder="Last name">
-          <input class="input" placeholder="Your email">
-          <a href="#" class="button button-primary">Subscribe</a>
-        </form>
-      </div>
-      <!-- <div class="box-item">
-        <h4 class="box-other-tile">Other Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div>
-      <div class="box-item">
-        <h4 class="box-other-tile">Events Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div>
-      <div class="box-item">
-        <h4 class="box-other-tile">News Post</h4>
-        <ul class="other-list">
-          <li class="">
-            <a href="#" class="other-title">Talking about workplace mental health: How do employers in the Midlands
-              understand and experience mental health issues?</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Workplace mental health and Covid-19</a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-          <li class="">
-            <a href="#" class="other-title">Understanding Disparities in Local Productivity in the UK: Are we using the
-              right measure? </a>
-            <a href="#" class="time">March 26, 2020</a>
-          </li>
-        </ul>
-      </div> -->
+      <ngb-pagination [(page)]="page" [pageSize]="10" [collectionSize]="count" (pageChange)="changed($event)"
+      *ngIf="count > 0"></ngb-pagination>
     </div>
   </div>
 </section>

@@ -22,7 +22,6 @@ const routes: Routes = [
   {
     path: '',
     component: ContainerComponent,
-    runGuardsAndResolvers: 'always',
     resolve: {
       menu: MenuResolve,
       data: BannerResolve,
@@ -36,6 +35,7 @@ const routes: Routes = [
       {
         path: 'su-kien',
         component: EventsComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           posts: EventPostsResolve
         }
@@ -43,12 +43,14 @@ const routes: Routes = [
       {
         path: 'su-kien/:code',
         component: EventsComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           posts: EventPostsResolve
         }
       },
       {
         path: 'su-kien/bai-viet/:code',
+        runGuardsAndResolvers: 'always',
         component: EventComponent,
         resolve: {
           post: EventPostResolve
@@ -57,6 +59,7 @@ const routes: Routes = [
       {
         path: 'xuat-ban',
         component: PublicationsComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           posts: PublicationPostsResolve
         }
@@ -64,6 +67,7 @@ const routes: Routes = [
       {
         path: 'xuat-ban/:code',
         component: PublicationsComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           posts: PublicationPostsResolve
         }
@@ -71,6 +75,7 @@ const routes: Routes = [
       {
         path: 'xuat-ban/bai-viet/:code',
         component: PublicationComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           post: PublicationPostResolve
         }
@@ -78,6 +83,7 @@ const routes: Routes = [
       {
         path: 'du-an',
         component: ProjectsComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           posts: ProjectPostsResolve
         }
@@ -85,6 +91,7 @@ const routes: Routes = [
       {
         path: 'du-an/:code',
         component: ProjectsComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           posts: ProjectPostsResolve
         }
@@ -92,6 +99,7 @@ const routes: Routes = [
       {
         path: 'du-an/bai-viet/:code',
         component: ProjectComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           post: ProjectPostResolve
         }
@@ -99,6 +107,7 @@ const routes: Routes = [
       {
         path: 'tin-tuc',
         component: PostsComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           posts: NewsPostsResolve
         }
@@ -106,12 +115,14 @@ const routes: Routes = [
       {
         path: 'tin-tuc/:code',
         component: PostsComponent,
+        runGuardsAndResolvers: 'always',
         resolve: {
           posts: NewsPostsResolve
         }
       },
       {
         path: 'tin-tuc/bai-viet/:code',
+        runGuardsAndResolvers: 'always',
         component: PostComponent,
         resolve: {
           post: NewsPostResolve

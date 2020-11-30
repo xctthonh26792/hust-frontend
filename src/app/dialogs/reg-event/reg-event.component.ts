@@ -9,7 +9,7 @@ import { ToastrService } from 'src/services';
 })
 export class RegEventComponent {
   constructor(private modal: NgbActiveModal, private toastr: ToastrService) {
-    console.log(this)
+    
   }
 
   post: any
@@ -18,9 +18,7 @@ export class RegEventComponent {
   phone: string
 
   reg() {
-    console.log(this)
-    // show toast
-    this.toastr.success(`Register event ${this.post.name} success`)
+    this.toastr.success(`Đăng ký sự kiện '${this.post.name}' thành công.`)
     this.modal.close()
   }
 

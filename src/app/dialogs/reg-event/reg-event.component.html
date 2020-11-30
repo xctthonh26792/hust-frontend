@@ -1,19 +1,19 @@
 <div class="modal-header">
-  <h4 class="modal-title">Event register</h4>
+  <h4 class="modal-title">Đăng ký tham dự sự kiện</h4>
   <button type="button" class="close" aria-label="Close" (click)="close()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <div>Event: {{ post.name }}</div>
-  <div>Address: {{ post.address }}</div>
-  <div>Time: {{ post.start_date | date:'dd/MM/yyyy' }} - {{ post.end_date | date:'dd/MM/yyyy' }}</div>
+  <div>Sự kiện: {{ post.name }}</div>
+  <div>Địa điểm tổ chức: {{ post.address }}</div>
+  <div>Thời gian: {{ post.start_date | date:'dd/MM/yyyy' }} - {{ post.end_date | date:'dd/MM/yyyy' }}</div>
   <div>
-    <input class="input" type="text" placeholder="Name" [(ngModel)]="name">
-    <input class="input" type="email" placeholder="Email" [(ngModel)]="email">
-    <input class="input" type="text" placeholder="Phone" [(ngModel)]="phone">
+    <input class="input" type="text" placeholder="Họ và tên" [(ngModel)]="name" required>
+    <input class="input" type="email" placeholder="Email" [(ngModel)]="email" required>
+    <input class="input" type="text" placeholder="Số điện thoại" [(ngModel)]="phone" required>
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="reg()">Register</button>
+  <button type="button" class="btn btn-outline-dark" (click)="reg()">Đăng ký tham dự</button>
 </div>

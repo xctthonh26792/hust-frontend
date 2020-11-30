@@ -8,13 +8,13 @@
           <div class="col-md-9">
             <a [routerLink]="['/xuat-ban/bai-viet', seo(post.name, post.def_code)]"
               class="item-public-tile">{{ post.name }}</a>
-            <h5>Published: {{ post.publication_date | date:'dd/MM/yyyy' }}</h5>
+            <h5>Ngày xuất bản: {{ post.publication_date | date:'dd/MM/yyyy' }}</h5>
             <div [innerHtml]="post.short_description"></div>
           </div>
           <div class="col-md-3"><img [src]="post.logo | link"></div>
         </div>
         <div *ngIf="(post.authors | isArrayNotEmpty) || (post.system_authors | isArrayNotEmpty)">
-          <h5>Authors</h5>
+          <h5>Tác giả</h5>
           <p class="sp-group" *ngIf="!post.is_from_system">
             <a class="item-author" *ngFor="let author of post.authors">
               {{ author }}
@@ -27,13 +27,13 @@
           </p>
         </div>
         <div *ngIf="post.tags | isArrayNotEmpty">
-          <h5>Tags</h5>
+          <h5>Từ khóa</h5>
           <p class="sp-group">
             <span *ngFor="let tag of post.tags">{{ tag }}</span>
           </p>
         </div>
         <div *ngIf="post.publication_themes | isArrayNotEmpty">
-          <h5>Associated Themes</h5>
+          <h5>Chủ đề liên quan</h5>
           <p class="sp-group">
             <span *ngFor="let theme of post.publication_themes">{{ theme.name }}</span>
           </p>
@@ -43,15 +43,17 @@
               class="fa fa-file-text"></i>Chi tiết</a>
         </p>
       </div>
+
+      <ngb-pagination [(page)]="page" [pageSize]="10" [collectionSize]="count" (pageChange)="changed($event)" *ngIf="count > 0"></ngb-pagination>
     </div>
     <div class="col-md-3 side-right">
       <div class="box-item box-subscribe">
-        <h3 class="box-item-tile">Subscribe for Newsletter</h3>
+        <h3 class="box-item-tile">Đăng ký nhận bản tin</h3>
         <form class="form form-subscribe">
-          <input class="input" placeholder="First name">
-          <input class="input" placeholder="Last name">
-          <input class="input" placeholder="Your email">
-          <a href="#" class="button button-primary">Subscribe</a>
+          <input type="text" class="input" placeholder="Họ và tên">
+          <input type="email" class="input" placeholder="Email">
+          <input type="text" class="input" placeholder="Số điện thoại">
+          <a href="#" class="button button-primary">Đăng ký</a>
         </form>
       </div>
       <!-- <div class="box-item">
