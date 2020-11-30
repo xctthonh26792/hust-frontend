@@ -21,6 +21,7 @@ import {
   SWIPER_CONFIG
 } from 'ngx-swiper-wrapper';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -45,6 +46,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   imports: [
     SwiperModule,
     BrowserModule,
+    FormsModule,
     CommonModule,
     AppRoutingModule,
     ServicesModule.forRoot(),

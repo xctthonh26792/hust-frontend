@@ -25,6 +25,16 @@ export class HomeComponent implements OnInit {
     autoplay: true,
     effect: 'fade'
   };
+  public config_partner: SwiperOptions = {
+    direction: 'horizontal',
+    slidesPerView: 4,
+    keyboard: true,
+    mousewheel: true,
+    scrollbar: false,
+    navigation: true,
+    pagination: false,
+    spaceBetween: 50,
+  };
   constructor(seo: SeoService, private route: ActivatedRoute, private router: Router) {
     seo.set('Trang chủ')
     this.url = environment.api_url;

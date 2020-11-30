@@ -24,13 +24,15 @@ const routes: Routes = [
     component: ContainerComponent,
     resolve: {
       menu: MenuResolve,
-      data: BannerResolve,
-      events: EventHomeDataResolve,
     },
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        resolve: {
+          data: BannerResolve,
+          events: EventHomeDataResolve,
+        },
       },
       {
         path: 'su-kien',
