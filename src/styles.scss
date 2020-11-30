@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
 html {
   scroll-behavior: smooth;
   background-color: #fff;
@@ -776,6 +780,3 @@ ul li {
     color: #fff;
   }
 }
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
