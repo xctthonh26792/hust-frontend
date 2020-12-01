@@ -13,6 +13,7 @@ export class SeoService {
       //<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
       meta.addTag({
         name: 'Content-Security-Policy',
+        'http-equiv': 'Content-Security-Policy',
         content: 'upgrade-insecure-requests'
       })
     }
