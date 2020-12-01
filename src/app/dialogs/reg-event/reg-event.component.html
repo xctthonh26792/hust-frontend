@@ -5,15 +5,20 @@
   </button>
 </div>
 <div class="modal-body">
-  <div>Sự kiện: {{ post.name }}</div>
-  <div>Địa điểm tổ chức: {{ post.address }}</div>
-  <div>Thời gian: {{ post.start_date | date:'dd/MM/yyyy' }} - {{ post.end_date | date:'dd/MM/yyyy' }}</div>
-  <div>
-    <input class="input" type="text" placeholder="Họ và tên" [(ngModel)]="name" required>
-    <input class="input" type="email" placeholder="Email" [(ngModel)]="email" required>
-    <input class="input" type="text" placeholder="Số điện thoại" [(ngModel)]="phone" required>
+  <br />
+  <h3 class="box-other-tile" >{{ post.name }}</h3>
+  <p>Địa điểm tổ chức: <strong>{{ post.address }}</strong></p>
+  <p>Thời gian: <strong>{{ post.start_date | date:'dd/MM/yyyy' }}</strong> -
+    <strong>{{ post.end_date | date:'dd/MM/yyyy' }}</strong>
+  </p>
+  <br>
+  <div style="margin-bottom: 16px">
+    <input class="input" type="text" placeholder="Họ và tên">
+    <input class="input" type="email" placeholder="Email">
+    <input class="input" type="text" placeholder="Số điện thoại">
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="reg()">Đăng ký tham dự</button>
+  <a href="#" class="button button-primary" (click)="reg()">Đăng ký tham dự</a>
+  <!-- <button type="button" class="btn btn-outline-dark" (click)="reg()">Đăng ký tham dự</button> -->
 </div>

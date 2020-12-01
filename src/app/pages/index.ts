@@ -9,6 +9,8 @@ import { ProjectComponent } from './project/project.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
 import { ContactComponent } from './contact/contact.component';
+import { EducationComponent } from './education/education.component';
+import { EducationsComponent } from './educations/educations.component';
 import { SubscribeActionComponent } from './subscribe.action/subscribe.action.component';
 
 export { ContainerComponent } from './container/container.component';
@@ -22,6 +24,8 @@ export { ProjectComponent } from './project/project.component';
 export { PostsComponent } from './posts/posts.component';
 export { PostComponent } from './post/post.component';
 export { ContactComponent } from './contact/contact.component';
+export { EducationComponent } from './education/education.component';
+export { EducationsComponent } from './educations/educations.component';
 export { SubscribeActionComponent } from './subscribe.action/subscribe.action.component';
 
 export const PAGES = [
@@ -36,5 +40,7 @@ export const PAGES = [
   PostsComponent,
   PostComponent,
   ContactComponent,
-  SubscribeActionComponent
+  SubscribeActionComponent,
+  EducationComponent,
+  EducationsComponent,
 ]

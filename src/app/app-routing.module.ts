@@ -14,9 +14,24 @@ import {
   ContactComponent,
   ContainerComponent,
 } from './pages';
-import { MenuResolve, PublicationPostResolve, BannerResolve, EventPostsResolve, PublicationPostsResolve, ProjectPostsResolve, ProjectPostResolve } from './resolvers';
-import { EventPostResolve, EventHomeDataResolve } from './resolvers/event.resolver';
-import { NewsPostResolve, NewsPostsResolve } from './resolvers/news.resolver';
+import { EducationComponent } from './pages/education/education.component';
+import { EducationsComponent } from './pages/educations/educations.component';
+import {
+  MenuResolve,
+  PublicationPostResolve,
+  BannerResolve,
+  EventPostsResolve,
+  PublicationPostsResolve,
+  ProjectPostsResolve,
+  ProjectPostResolve,
+  EducationPostsResolve,
+  EducationPostResolve,
+  EventPostResolve,
+  EventHomeDataResolve,
+  NewsPostResolve,
+  NewsPostsResolve
+} from './resolvers';
+
 
 const routes: Routes = [
   {
@@ -104,6 +119,30 @@ const routes: Routes = [
         runGuardsAndResolvers: 'always',
         resolve: {
           post: ProjectPostResolve
+        }
+      },
+      {
+        path: 'dao-tao',
+        component: EducationsComponent,
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          posts: EducationPostsResolve
+        }
+      },
+      {
+        path: 'dao-tao/:code',
+        component: EducationsComponent,
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          posts: EducationPostsResolve
+        }
+      },
+      {
+        path: 'dao-tao/bai-viet/:code',
+        component: EducationComponent,
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          post: EducationPostResolve
         }
       },
       {

@@ -7,31 +7,37 @@
       </li>
       <li class="nav-item nav-drop nav-parent">
         <a routerLink="/xuat-ban">Xuất bản
-          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && models.publications"></i>
+          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && (models.publications | isArrayNotEmpty)"></i>
         </a>
-        <nav-menu [models]="models.publications" path="/xuat-ban" *ngIf="models && models.publications"></nav-menu>
+        <nav-menu [models]="models.publications" path="/xuat-ban" *ngIf="models && (models.publications | isArrayNotEmpty)"></nav-menu>
       </li>
       <li class="nav-item nav-drop nav-parent">
         <a routerLink="/du-an">Dự án
-          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && models.projects"></i>
+          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && (models.projects | isArrayNotEmpty)"></i>
         </a>
-        <nav-menu [models]="models.projects" path="/du-an" *ngIf="models && models.projects"></nav-menu>
+        <nav-menu [models]="models.projects" path="/du-an" *ngIf="models && (models.projects | isArrayNotEmpty)"></nav-menu>
       </li>
       <li class="nav-item nav-drop nav-parent">
         <a routerLink="/su-kien">Sự kiện
-          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && models.events"></i>
+          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && (models.events | isArrayNotEmpty)"></i>
         </a>
-        <nav-menu [models]="models.events" path="/su-kien" *ngIf="models && models.events"></nav-menu>
+        <nav-menu [models]="models.events" path="/su-kien" *ngIf="models && (models.events | isArrayNotEmpty)"></nav-menu>
       </li>
       <li class="nav-item nav-drop nav-parent">
         <a routerLink="/tin-tuc">Tin tức
-          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && models.news"></i>
+          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && (models.news | isArrayNotEmpty)"></i>
         </a>
-        <nav-menu [models]="models.news" path="/tin-tuc" *ngIf="models && models.news"></nav-menu>
+        <nav-menu [models]="models.news" path="/tin-tuc" *ngIf="models && (models.news | isArrayNotEmpty)"></nav-menu>
       </li>
-      <!-- <li class="nav-item">
-        <a routerLink="/lien-he">Contact</a>
-      </li> -->
+      <li class="nav-item nav-drop nav-parent">
+        <a routerLink="/dao-tao">Đào tạo
+          <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && (models.educations | isArrayNotEmpty)"></i>
+        </a>
+        <nav-menu [models]="models.educations" path="/dao-tao" *ngIf="models && (models.educations | isArrayNotEmpty)"></nav-menu>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/lien-he">Về chúng tôi</a>
+      </li>
       <!-- <li class="nav-item">
         <a routerLink="/current-projects">Current Projects</a>
       </li> -->
