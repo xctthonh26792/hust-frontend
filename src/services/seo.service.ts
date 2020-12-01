@@ -1,5 +1,6 @@
+import { NgLocalization } from '@angular/common';
 import { Injectable } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 import _ from 'lodash';
 
@@ -7,7 +8,14 @@ import _ from 'lodash';
 export class SeoService {
   _prefix: string;
   _title: string
-  constructor(private title: Title) {
+  constructor(private title: Title, meta: Meta) {
+    if (window.location.protocol === 'https:') {
+      //<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+      meta.addTag({
+        name: 'Content-Security-Policy',
+        content: 'upgrade-insecure-requests'
+      })
+    }
   }
 
   prefix(value: string) {
@@ -25,7 +33,7 @@ export class SeoService {
   private show() {
     if (this._title === null || this._title === undefined || this._title === '') {
       this.title.setTitle(`${this._prefix}`);
-      return; 
+      return;
     }
     this.title.setTitle(`${this._title} - ${this._prefix}`);
   }
