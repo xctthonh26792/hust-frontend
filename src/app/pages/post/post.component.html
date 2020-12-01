@@ -4,7 +4,8 @@
     <div class="col-md-12 side-left">
       <div class="box-item item-public">
         <h5>Ngày xuất bản: {{ post.publication_date | date:'dd/MM/yyyy' }}</h5>
-        <div [innerHtml]="post.description"></div>
+        <div [innerHtml]="post.description" *ngIf="post.description | isStringNotEmpty"></div>
+        <div [innerHtml]="post.short_description" *ngIf="post.description | isStringEmpty"></div>
         <div *ngIf="(post.authors | isArrayNotEmpty) || (post.system_authors | isArrayNotEmpty)">
           <h5>Các tác giả</h5>
           <p class="sp-group" *ngIf="!post.is_from_system">
