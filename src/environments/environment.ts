@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // api_url: 'http://localhost:24567'
-  api_url: 'http://hust-apis.tenjin.icu'
+  api_url: 'http://localhost:24567'
+  // api_url: 'http://hust-apis.tenjin.icu'
 };
 
 /*

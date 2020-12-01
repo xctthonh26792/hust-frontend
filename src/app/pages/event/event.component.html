@@ -10,6 +10,7 @@
           <button (click)="register()" class="button button-primary button-long"><i class="fa fa-youtube-play"
               aria-hidden="true"></i>Đăng ký tham dự</button>
         </p>
+        <h5>Thời gian diễn ra: {{ post.start_date }} - {{ post.end_date }}</h5>
         <div *ngIf="post.participants | isArrayNotEmpty">
           <h5>Những người tham gia</h5>
           <ul class="list-people row">
