@@ -3,7 +3,8 @@
   <div class="row">
     <div class="col-md-12 side-left">
       <div class="box-item item-project-view">
-        <div [innerHtml]="post.description"></div>
+        <div [innerHtml]="post.description" *ngIf="post.description | isStringNotEmpty"></div>
+        <div [innerHtml]="post.short_description" *ngIf="post.description | isStringEmpty"></div>
         <p class="box-item-actions" *ngIf="post.url | isStringNotEmpty">
           <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Tải tài
             liệu</button>

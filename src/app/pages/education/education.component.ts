@@ -17,6 +17,8 @@ export class EducationComponent {
     route.data.subscribe((data) => {
       this.post = _.get(data, 'post');
     })
+
+    console.log(this.post)
   }
 
   post: any
