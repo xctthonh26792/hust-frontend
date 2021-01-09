@@ -27,6 +27,17 @@ export class EventComponent {
     modal.componentInstance.post = this.post
   }
 
+  download() {
+    let url = _.get(this.post, 'url')
+    const link = `${environment.api_url}/${url}`
+    window.open(link)
+  }
+
+  download_source() {
+    let url = _.get(this.post, 'source')
+    window.open(url)
+  }
+
   seo(title: string, code: string) {
     return `${Utils.toSeo(title)}-${code}`
   }

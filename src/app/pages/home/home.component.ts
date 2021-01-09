@@ -60,4 +60,8 @@ export class HomeComponent implements OnInit {
     return `${Utils.toSeo(title)}-${code}`
   }
 
+  redirect(url: string) {
+    window.open(url)
+  }
+
 }

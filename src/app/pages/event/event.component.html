@@ -11,6 +11,14 @@
               aria-hidden="true"></i>Đăng ký tham dự</button>
         </p>
         <h5>Thời gian diễn ra: {{ post.start_date }} - {{ post.end_date }}</h5>
+        <p class="box-item-actions" *ngIf="post.url | isStringNotEmpty">
+          <button class="button button-primary" (click)="download()"><i class="fa fa-file-text"></i>Tải tài
+            liệu</button>
+        </p>
+        <p class="box-item-actions" *ngIf="post.source | isStringNotEmpty">
+          <button class="button button-primary" (click)="download_source()"><i class="fa fa-file-text"></i>Tải tài
+            liệu</button>
+        </p>
         <div *ngIf="post.participants | isArrayNotEmpty">
           <h5>Những người tham gia</h5>
           <ul class="list-people row">

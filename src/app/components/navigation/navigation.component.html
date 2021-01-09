@@ -21,11 +21,14 @@
       </li>
 
       <li class="nav-item nav-drop nav-parent">
-        <a routerLink="/dao-tao">Đào tạo
+        <a routerLink="/dao-tao">E-Learning
           <i class="fa fa-caret-down" aria-hidden="true" *ngIf="models && (models.educations | isArrayNotEmpty)"></i>
         </a>
         <nav-menu [models]="models.educations" path="/dao-tao" *ngIf="models && (models.educations | isArrayNotEmpty)">
         </nav-menu>
+      </li>
+      <li class="nav-item nav-drop nav-parent">
+        <a routerLink="/ho-tro-quyet-dinh">Hỗ trợ ra quyết định</a>
       </li>
       <li class="nav-item nav-drop nav-parent">
         <a routerLink="/su-kien">Sự kiện

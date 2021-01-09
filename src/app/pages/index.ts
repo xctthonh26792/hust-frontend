@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { EducationComponent } from './education/education.component';
 import { EducationsComponent } from './educations/educations.component';
 import { SubscribeActionComponent } from './subscribe.action/subscribe.action.component';
+import { DecisionSupportComponent } from './decision-support/decision-support.component';
 
 export { ContainerComponent } from './container/container.component';
 export { HomeComponent } from './home/home.component';
@@ -27,6 +28,7 @@ export { ContactComponent } from './contact/contact.component';
 export { EducationComponent } from './education/education.component';
 export { EducationsComponent } from './educations/educations.component';
 export { SubscribeActionComponent } from './subscribe.action/subscribe.action.component';
+export { DecisionSupportComponent } from './decision-support/decision-support.component';
 
 export const PAGES = [
   ContainerComponent,
@@ -43,4 +45,5 @@ export const PAGES = [
   SubscribeActionComponent,
   EducationComponent,
   EducationsComponent,
+  DecisionSupportComponent
 ]

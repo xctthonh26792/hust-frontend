@@ -13,6 +13,7 @@ import {
   PostComponent,
   ContactComponent,
   ContainerComponent,
+  DecisionSupportComponent,
 } from './pages';
 import { EducationComponent } from './pages/education/education.component';
 import { EducationsComponent } from './pages/educations/educations.component';
@@ -64,6 +65,10 @@ const routes: Routes = [
         resolve: {
           posts: EventPostsResolve
         }
+      },
+      {
+        path: 'ho-tro-quyet-dinh',
+        component: DecisionSupportComponent,
       },
       {
         path: 'su-kien/bai-viet/:code',

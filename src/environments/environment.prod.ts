@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api_url: 'http://hust-apis.tenjin.icu'
+  api_url: 'https://circulareconomy-knowledgehub-apis.hust.edu.vn'
 };

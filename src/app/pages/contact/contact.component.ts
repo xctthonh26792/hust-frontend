@@ -10,4 +10,5 @@ export class ContactComponent {
   constructor(seo: SeoService) {
     seo.set('Liên hệ')
   }
+
 }

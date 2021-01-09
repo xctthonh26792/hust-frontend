@@ -22,6 +22,7 @@ import {
 } from 'ngx-swiper-wrapper';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { DecisionSupportComponent } from './pages/decision-support/decision-support.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -41,7 +42,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ...PAGES,
     ...PIPES,
     ...DIRECTIVES,
-    ...DIALOGS
+    ...DIALOGS,
+    DecisionSupportComponent
   ],
   imports: [
     SwiperModule,
