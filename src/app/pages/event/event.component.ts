@@ -25,6 +25,7 @@ export class EventComponent {
   register() {
     var modal = this.modal.shown(RegEventComponent)
     modal.componentInstance.post = this.post
+    console.log(modal.componentInstance.post)
   }
 
   download() {
