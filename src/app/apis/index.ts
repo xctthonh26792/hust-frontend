@@ -6,6 +6,7 @@ import { BannerApi } from './banner.api';
 import { ProjectApi } from './project.api';
 import { EducationApi } from './education.api';
 import { RegisterEventApi } from './register-event.api';
+import { NewsCategoryApi } from './news-category.api';
 
 export { ConfigurationApi } from './configuration.api';
 export { PublicationApi } from './publication.api';
@@ -15,6 +16,7 @@ export { BannerApi } from './banner.api';
 export { ProjectApi } from './project.api';
 export { EducationApi } from './education.api';
 export { RegisterEventApi } from './register-event.api';
+export { NewsCategoryApi } from './news-category.api';
 
 export const APIS = [
   ConfigurationApi,
@@ -24,5 +26,6 @@ export const APIS = [
   BannerApi,
   ProjectApi,
   EducationApi,
-  RegisterEventApi
+  RegisterEventApi,
+  NewsCategoryApi
 ];

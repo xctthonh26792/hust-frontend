@@ -14,6 +14,7 @@ import {
   ContactComponent,
   ContainerComponent,
   DecisionSupportComponent,
+  SearchCategoryComponent
 } from './pages';
 import { EducationComponent } from './pages/education/education.component';
 import { EducationsComponent } from './pages/educations/educations.component';
@@ -30,7 +31,8 @@ import {
   EventPostResolve,
   EventHomeDataResolve,
   NewsPostResolve,
-  NewsPostsResolve
+  NewsPostsResolve,
+  NewsCategoryResolve
 } from './resolvers';
 
 
@@ -177,6 +179,14 @@ const routes: Routes = [
       {
         path: 'lien-he',
         component: ContactComponent
+      },
+      {
+        path: 'thong-tin-tim-kiem/:keyword',
+        runGuardsAndResolvers: 'always',
+        component: SearchCategoryComponent,
+        resolve: {
+          datas: NewsCategoryResolve
+        }
       }
     ]
   }

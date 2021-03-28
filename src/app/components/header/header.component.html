@@ -7,7 +7,8 @@
       </div>
       <div class="col-md-6 clearfix">
         <form class="search-form float-right">
-          <input class="search-input" type="text" name="" [placeholder]="'text-search' | loc">
+          <input class="search-input" type="text" name="keyword" [placeholder]="'text-search' | loc"
+            [(ngModel)]="model.keyword" (keyup.enter)="search()">
           <button class="search-button" type="button" (click)="search()"><i class="fa fa-search"></i></button>
         </form>
       </div>

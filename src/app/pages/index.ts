@@ -13,6 +13,7 @@ import { EducationComponent } from './education/education.component';
 import { EducationsComponent } from './educations/educations.component';
 import { SubscribeActionComponent } from './subscribe.action/subscribe.action.component';
 import { DecisionSupportComponent } from './decision-support/decision-support.component';
+import { SearchCategoryComponent } from './search-category/search-category.component';
 
 export { ContainerComponent } from './container/container.component';
 export { HomeComponent } from './home/home.component';
@@ -29,6 +30,7 @@ export { EducationComponent } from './education/education.component';
 export { EducationsComponent } from './educations/educations.component';
 export { SubscribeActionComponent } from './subscribe.action/subscribe.action.component';
 export { DecisionSupportComponent } from './decision-support/decision-support.component';
+export { SearchCategoryComponent } from './search-category/search-category.component';
 
 export const PAGES = [
   ContainerComponent,
@@ -45,5 +47,6 @@ export const PAGES = [
   SubscribeActionComponent,
   EducationComponent,
   EducationsComponent,
-  DecisionSupportComponent
+  DecisionSupportComponent,
+  SearchCategoryComponent
 ]
